@@ -1,0 +1,273 @@
+---
+title: "The effect of entrepreneurship training for the youth in Uganda"
+author: "Bathia, Contreras-Loya, Krinsman, Mgbara"
+date: "4/9/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+rm(list=ls())
+knitr::opts_chunk$set(echo = TRUE)
+getwd()
+options(scipen = 10)
+library(tmle)
+library(ggplot2)
+library(SuperLearner)
+library(dplyr)
+library(magrittr)
+library(knitr)
+library(foreign)
+library(ck37r)
+library(sl3)
+library(arm)
+library(caret)
+library(data.table)
+library(screening)
+
+data <- read.dta("Data/SEED_endline_analysis.dta", convert.factors = FALSE, convert.underscore = FALSE)
+data <- data.frame(data)
+
+# List to hold the different column names.
+(names = list(
+  # Outcomes of interest
+  outcome = c("ever_self_employed","log_tot"),
+
+  # Treatment variable
+  treatment = "treated",
+
+  # Adjustment covariates
+  covars = c("treated","gender","age","q06_dayorboarding","q25_family_business","q25a_wk_family_bus","timeprefs_patience","riskbehavior","mathbusiness","leadership","perceivedcontrol","timeprefs_delta","timeprefs_beta","prosocialbehavior","anxiety","selfconfidence","big5extroversion","big5emostability","big5openness","big5conscientious","big5agreeable","schoolacceptance","currfamwealthstep","tenyrwealthstep","takingriskstep","ravenscore","father_educ2","father_educ3","father_educ4","father_educ5","father_income2","father_income3","mother_income2","mother_income3","type_house","q13_olevelscore2","q13_olevelscore34")
+))
+
+# Keep variables of interest
+
+data <- subset(data, select = c(names$outcome, names$treatment, names$covars))
+# Review missing values in id, outcome, treatment, and censoring variables.
+# Outcome is the only variable that can have missing values.
+colSums(is.na(data[, c(names$outcome, names$censoring, names$treatment)]))
+
+# Remove observations missing their censoring time.
+dim(data)
+summary(data)
+skip_vars <- c(names$treatment, names$outcome)
+impute <- ck37r::impute_missing_values(data,
+                                       skip_vars = skip_vars)
+
+# Review missing data for all covariates.
+# Only the outcome variable should have missing data at this point.
+data <- impute$data
+colSums(is.na(data))
+
+## Estimation of causal efects
+
+Y1 <- data$ever_self_employed
+Y2 <- data$log_tot[!is.na(data$log_tot)]
+
+A1 <- data$treated
+A2 <- data$treated[!is.na(data$log_tot)]
+
+all_covars <- data[, colnames(data) %in% names$covars]
+
+W <- all_covars
+W1 <- all_covars
+W2 <- subset(data, !is.na(data$log_tot))
+W2 <- W2[, colnames(data) %in% names$covars]
+
+screen1 <- screening(x=W1, y=Y1, method="holp", family = "binomial", num.select = 15)$screen
+screen2 <- screening(x=W2, y=Y2, method="holp", family = "gaussian", num.select = 15)$screen
+screenA <- screening(x=W, y=A1, method="holp", family = "binomial", num.select = 15)$screen 
+screenA2 <- screening(x=W2, y=A2, method="holp", family = "binomial", num.select = 15)$screen 
+
+W1 <- W1[,screen1]
+W2 <- W2[,screen2]
+WA <- W[,screenA]
+WA2 <- W2[,screenA2]
+
+# Fit glm model (base model, should have the worse performance)
+
+logit2prob <- function(logit){
+  odds <- exp(logit)
+  prob <- odds / (1 + odds)
+  return(prob)
+}
+
+model1 <- glm(formula = Y1 ~ A1, family = "binomial")
+summary(model1)
+logit_control <- model1$coefficients[1]
+logit_treated <- model1$coefficients[1] + 1*model1$coefficients[2]
+b1 <- logit2prob(logit_treated) - logit2prob(logit_control)
+b1
+
+model2 <- glm(formula = Y2 ~ A2, family = "gaussian")
+summary(model2)
+
+# Define our Super Learner library
+
+g_library <- c("SL.mean",
+             "SL.glm",
+             "SL.glm.interaction")
+
+Q_library <- c("SL.mean",
+             "SL.glm",
+             "SL.glm.interaction",
+             #"SL.glmnet",
+             #"SL.randomForest",
+             #"SL.bartMachine",
+             "SL.xgboost")
+
+#############################################################
+# G-computation formula
+#############################################################
+
+np_boot_gcomp <- function(Y, A, W, nrep, family){
+  X <- cbind(A,W)
+  print(colnames(X))
+  QbarSL <- SuperLearner(Y=as.numeric(Y),
+                       X=X,
+                       SL.library = Q_library,
+                       family = family)
+  results <- rep(NA, nrep)
+  n <- NROW(Y)
+  #stop("stop")
+  for(i in 1:nrep){
+    i_boot <- sample(1:nrow(W), size = n, replace = TRUE)
+    W_boot <- X[i_boot,]
+    W1_boot <- W0_boot <- W_boot
+    W1_boot$A <- 1
+    W0_boot$A <- 0  
+    #psi_bootstrap <- G_comp(Y = Y_b, A = A_b, W = W_b, family = family)
+    Qbar1W <- predict(QbarSL, newdata=W1_boot, type="response")$pred
+    Qbar0W <- predict(QbarSL, newdata=W0_boot, type="response")$pred
+    psi_bootstrap <- (Qbar1W - Qbar0W)
+    results[i] <- psi_bootstrap
+  }
+  return(results)
+}
+
+# For business creation
+g_comp_boot <- np_boot_gcomp(Y=Y1, A=A1, W=W1, nrep=100, family = "binomial")
+summary(g_comp_boot)
+b_iptw <- mean(g_comp_boot)
+print(b_iptw)
+sd_iptw <- sd(g_comp_boot)
+print(sd_iptw)
+t_stat <- b_iptw/sd_iptw
+p_val <- dt(t_stat, df = n-1, log=FALSE)
+print(p_val)
+quantile(g_comp_boot, probs = c(0.025,0.975))
+
+# For log of total earnings
+tot_g_comp_boot <- np_boot_gcomp(Y=Y2, A=A2, W=W2, nrep=100, family = "gaussian")
+summary(tot_g_comp_boot)
+b_iptw <- mean(tot_g_comp_boot)
+print(b_iptw)
+sd_iptw <- sd(tot_g_comp_boot)
+print(sd_iptw)
+t_stat <- b_iptw/sd_iptw
+p_val <- dt(t_stat, df = n-1, log=FALSE)
+print(p_val)
+quantile(tot_g_comp_boot, probs = c(0.025,0.975))
+  
+#############################################################
+# IPTW
+#############################################################
+
+iptw <- function(Y, A, X, family){
+  n <- NROW(Y)
+  print(n)
+  propensity_score <- SuperLearner(Y=A,
+                   X=X,
+                   SL.library = g_library,
+                   family = family)
+  # Obtain predicted probability of treatment 
+  pred.g1W <- predict(propensity_score, newX = X, type = 'response')$pred
+  # Probability of not being treated
+  pred.g0W <- 1 - pred.g1W
+  # Create vector gAW
+  gAW <- rep(NA, n)
+  gAW[A==1] <- pred.g1W[A==1]
+  gAW[A==0] <- pred.g0W[A==0]
+  # Create vector with inverse of predicted probability
+  wt <- 1/gAW
+  # Implement stabilized IPTW estimator (a.k.a. the modified Horvitz-Thompson estimator)
+  Psi_hat <- mean(as.numeric(A==1)*wt*Y)/mean(as.numeric(A==1)*wt) -
+             mean(as.numeric(A==0)*wt*Y)/mean(as.numeric(A==0)*wt)
+  return(Psi_hat)
+  }
+
+np_boot <- function(Y, A, X, family, nrep){
+  results <- rep(NA, nrep)
+  n <- NROW(Y)
+  df <- cbind(Y,A,X)
+  for(i in 1:nrep){
+    i_boot <- sample(1:nrow(df), size = n, replace = TRUE)
+    df_bootstrap <- df[i_boot,]
+    Y_b <- df_bootstrap[,1]
+    A_b <- df_bootstrap[,2]
+    W_b <- subset(df_bootstrap, select = -c(1,2))
+    psi_bootstrap <- iptw(Y = Y_b, A = A_b, X = W_b, family = family)
+    results[i] <- psi_bootstrap
+  }
+  return(results)
+}
+
+# IPTW for business creation
+ate_iptw <- iptw(Y=Y1, A=A1, X=WA, family = "binomial")
+ate_iptw
+
+iptw_bootstrap <- np_boot(Y=Y1, A=A1, X=WA, nrep = 100)
+summary(iptw_bootstrap)
+b_iptw <- mean(iptw_bootstrap)
+print(b_iptw)
+sd_iptw <- sd(iptw_bootstrap)
+print(sd_iptw)
+t_stat <- b_iptw/sd_iptw
+p_val <- dt(t_stat, df = n-1, log=FALSE)
+print(p_val)
+quantile(iptw_bootstrap, probs = c(0.025,0.975))
+
+# IPTW log total earnings
+
+total_earn_iptw <- iptw(Y=Y2, A=A2, X=WA2, family = "gaussian")
+total_earn_iptw
+
+total_iptw_bootstrap <- np_boot(Y=Y2, A=A2, X=WA2, nrep = 100, family = "gaussian")
+summary(total_iptw_bootstrap)
+b_iptw <- mean(total_iptw_bootstrap)
+print(b_iptw)
+sd_iptw <- sd(total_iptw_bootstrap)
+print(sd_iptw)
+t_stat <- b_iptw/sd_iptw
+p_val <- dt(t_stat, df = n-1, log=FALSE)
+print(p_val)
+quantile(total_iptw_bootstrap, probs = c(0.025,0.975))
+
+###################################################
+# TMLE 
+###################################################
+
+# Business creation
+tmle <- tmle(Y = as.numeric(Y1),
+                A = as.numeric(A1),
+                W = W1,
+                gform = "A~1",
+                family = "binomial",
+                #g.SL.library = g_library,
+                Q.SL.library = Q_library,
+                fluctuation = "logistic") #,
+                #V=10)
+tmle
+
+# Log of total earnings
+tot_tmle <- tmle(Y = as.numeric(Y2),
+                A = as.numeric(A2),
+                W = W2,
+                gform = "A~1",
+                family = "gaussian",
+                #g.SL.library = g_library,
+                Q.SL.library = Q_library,
+                fluctuation = "logistic") #,
+                #V=10)
+tot_tmle
+
+```
