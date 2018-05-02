@@ -1,6 +1,6 @@
 ---
 title: "The effect of entrepreneurship training for the youth in Uganda"
-author: "Bathia, Contreras-Loya, Krinsman, Mgbara"
+author: "Bathia, Contreras-Loya, Krinsman"
 date: "4/9/2018"
 output: html_document
 ---
@@ -182,8 +182,7 @@ np_boot_gcomp <- function(Y, A, W, nrep, family){
 }
 
 # For business creation
-# William: temporary change nrep to 5, so that can test code more quickly
-g_comp_boot <- np_boot_gcomp(Y=Y1, A=A1, W=W1, nrep=2, family = "binomial")
+g_comp_boot <- np_boot_gcomp(Y=Y1, A=A1, W=W1, nrep=100, family = "binomial")
 summary(g_comp_boot) 
 (b_iptw <- mean(g_comp_boot))
 (sd_iptw <- sd(g_comp_boot))
@@ -192,8 +191,7 @@ t_stat <- b_iptw/sd_iptw
 quantile(g_comp_boot, probs = c(0.025,0.975))
 
 # For log of total earnings
-# William: temporary change to nrep=5 so can can test code more quickly
-tot_g_comp_boot <- np_boot_gcomp(Y=Y2, A=A2, W=W2, nrep=2, family = "gaussian") 
+tot_g_comp_boot <- np_boot_gcomp(Y=Y2, A=A2, W=W2, nrep=100, family = "gaussian") 
 summary(tot_g_comp_boot)
 (b_iptw <- mean(tot_g_comp_boot))
 (sd_iptw <- sd(tot_g_comp_boot))
@@ -255,9 +253,7 @@ ate_iptw <- iptw(Y=Y1, A=A1, X=WA, family = "binomial")
 ate_iptw
 
 # William: added argument, family = "binomial" -- to avoid error 'argument "family" is missing, with no default'
-
-# William: temporary change to nrep =5 to make code more quickly testable
-iptw_bootstrap <- np_boot(Y=Y1, A=A1, X=WA, nrep = 2, family="binomial") 
+iptw_bootstrap <- np_boot(Y=Y1, A=A1, X=WA, nrep = 100, family="binomial") 
 summary(iptw_bootstrap)
 (b_iptw <- mean(iptw_bootstrap))
 (sd_iptw <- sd(iptw_bootstrap))
@@ -270,8 +266,7 @@ quantile(iptw_bootstrap, probs = c(0.025,0.975))
 total_earn_iptw <- iptw(Y=Y2, A=A2, X=WA2, family = "gaussian")
 total_earn_iptw
 
-# William: temporary change to nrep=1 for quicker testing
-total_iptw_bootstrap <- np_boot(Y=Y2, A=A2, X=WA2, nrep = 2, family = "gaussian") 
+total_iptw_bootstrap <- np_boot(Y=Y2, A=A2, X=WA2, nrep = 100, family = "gaussian") 
 summary(total_iptw_bootstrap)
 (b_iptw <- mean(total_iptw_bootstrap))
 (sd_iptw <- sd(total_iptw_bootstrap))
