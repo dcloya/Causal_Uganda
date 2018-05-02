@@ -10,19 +10,43 @@ rm(list=ls())
 knitr::opts_chunk$set(echo = TRUE)
 getwd()
 options(scipen = 10)
-library(tmle)
-library(ggplot2)
+# William: prevent excessive verbosity
+suppressMessages(
+  library(tmle)
+  )
+# William: prevent excessive verbosity
+suppressMessages(
+  library(ggplot2)
+)
 library(SuperLearner)
-library(dplyr)
+# William: prevent excessive verbosity
+suppressMessages(
+  library(dplyr)
+  )
 library(magrittr)
 library(knitr)
 library(foreign)
 library(ck37r)
-library(sl3)
-library(arm)
+suppressMessages(
+  library(sl3)
+  )
+suppressMessages(
+  library(arm)
+  )
+# Prevent verbosity from caret
+library(lattice)
 library(caret)
-library(data.table)
+suppressMessages(
+  library(data.table)
+  )
 library(screening)
+# William: added this line so that SuperLearner calls will work
+suppressMessages(
+  library(xgboost)
+  )
+# William: added these two lines to prevent unnecessary warnings when screening() is called
+library(foreach)
+library(glmnet)
 
 data <- read.dta("Data/SEED_endline_analysis.dta", convert.factors = FALSE, convert.underscore = FALSE)
 data <- data.frame(data)
@@ -80,10 +104,14 @@ screenA2 <- screening(x=W2, y=A2, method="holp", family = "binomial", num.select
 
 W1 <- W1[,screen1]
 W2 <- W2[,screen2]
+
+# William: added/moved this line here to make code work
+screenA2 <- screening(x=W2, y=A2, method="holp", family = "binomial", num.select = 15)$screen 
+
 WA <- W[,screenA]
 WA2 <- W2[,screenA2]
 
-# Fit glm model (base model, should have the worse performance)
+# Fit glm model (base model, should have the worst performance)
 
 logit2prob <- function(logit){
   odds <- exp(logit)
@@ -122,10 +150,13 @@ Q_library <- c("SL.mean",
 np_boot_gcomp <- function(Y, A, W, nrep, family){
   X <- cbind(A,W)
   print(colnames(X))
-  QbarSL <- SuperLearner(Y=as.numeric(Y),
+  # William: wrapped in suppressWarnings() to prevent excessive verbosity
+  suppressWarnings(
+    QbarSL <- SuperLearner(Y=as.numeric(Y),
                        X=X,
                        SL.library = Q_library,
                        family = family)
+    )  
   results <- rep(NA, nrep)
   n <- NROW(Y)
   #stop("stop")
@@ -136,8 +167,14 @@ np_boot_gcomp <- function(Y, A, W, nrep, family){
     W1_boot$A <- 1
     W0_boot$A <- 0  
     #psi_bootstrap <- G_comp(Y = Y_b, A = A_b, W = W_b, family = family)
-    Qbar1W <- predict(QbarSL, newdata=W1_boot, type="response")$pred
-    Qbar0W <- predict(QbarSL, newdata=W0_boot, type="response")$pred
+    # William: wrapped in suppressWarnings() to prevent excessive verbosity
+    suppressWarnings(
+      Qbar1W <- predict(QbarSL, newdata=W1_boot, type="response")$pred
+      ) 
+    # William: wrapped in suppressWarnings() to prevent excessive verbosity
+    suppressWarnings(
+      Qbar0W <- predict(QbarSL, newdata=W0_boot, type="response")$pred
+      ) 
     psi_bootstrap <- (Qbar1W - Qbar0W)
     results[i] <- psi_bootstrap
   }
@@ -145,27 +182,23 @@ np_boot_gcomp <- function(Y, A, W, nrep, family){
 }
 
 # For business creation
-g_comp_boot <- np_boot_gcomp(Y=Y1, A=A1, W=W1, nrep=100, family = "binomial")
-summary(g_comp_boot)
-b_iptw <- mean(g_comp_boot)
-print(b_iptw)
-sd_iptw <- sd(g_comp_boot)
-print(sd_iptw)
+# William: temporary change nrep to 5, so that can test code more quickly
+g_comp_boot <- np_boot_gcomp(Y=Y1, A=A1, W=W1, nrep=2, family = "binomial")
+summary(g_comp_boot) 
+(b_iptw <- mean(g_comp_boot))
+(sd_iptw <- sd(g_comp_boot))
 t_stat <- b_iptw/sd_iptw
-p_val <- dt(t_stat, df = n-1, log=FALSE)
-print(p_val)
+(p_val <- dt(t_stat, df = n-1, log=FALSE))
 quantile(g_comp_boot, probs = c(0.025,0.975))
 
 # For log of total earnings
-tot_g_comp_boot <- np_boot_gcomp(Y=Y2, A=A2, W=W2, nrep=100, family = "gaussian")
+# William: temporary change to nrep=5 so can can test code more quickly
+tot_g_comp_boot <- np_boot_gcomp(Y=Y2, A=A2, W=W2, nrep=2, family = "gaussian") 
 summary(tot_g_comp_boot)
-b_iptw <- mean(tot_g_comp_boot)
-print(b_iptw)
-sd_iptw <- sd(tot_g_comp_boot)
-print(sd_iptw)
+(b_iptw <- mean(tot_g_comp_boot))
+(sd_iptw <- sd(tot_g_comp_boot))
 t_stat <- b_iptw/sd_iptw
-p_val <- dt(t_stat, df = n-1, log=FALSE)
-print(p_val)
+(p_val <- dt(t_stat, df = n-1, log=FALSE))
 quantile(tot_g_comp_boot, probs = c(0.025,0.975))
   
 #############################################################
@@ -175,12 +208,18 @@ quantile(tot_g_comp_boot, probs = c(0.025,0.975))
 iptw <- function(Y, A, X, family){
   n <- NROW(Y)
   print(n)
-  propensity_score <- SuperLearner(Y=A,
+  # William: wrapped in suppressWarnings() to prevent excessive verbosity
+  suppressWarnings(
+    propensity_score <- SuperLearner(Y=A,
                    X=X,
                    SL.library = g_library,
                    family = family)
+    ) 
   # Obtain predicted probability of treatment 
-  pred.g1W <- predict(propensity_score, newX = X, type = 'response')$pred
+  # William: wrapped in suppressWarnings() to prevent excessive verbosity
+  suppressWarnings(
+    pred.g1W <- predict(propensity_score, newX = X, type = 'response')$pred
+    ) 
   # Probability of not being treated
   pred.g0W <- 1 - pred.g1W
   # Create vector gAW
@@ -215,15 +254,15 @@ np_boot <- function(Y, A, X, family, nrep){
 ate_iptw <- iptw(Y=Y1, A=A1, X=WA, family = "binomial")
 ate_iptw
 
-iptw_bootstrap <- np_boot(Y=Y1, A=A1, X=WA, nrep = 100)
+# William: added argument, family = "binomial" -- to avoid error 'argument "family" is missing, with no default'
+
+# William: temporary change to nrep =5 to make code more quickly testable
+iptw_bootstrap <- np_boot(Y=Y1, A=A1, X=WA, nrep = 2, family="binomial") 
 summary(iptw_bootstrap)
-b_iptw <- mean(iptw_bootstrap)
-print(b_iptw)
-sd_iptw <- sd(iptw_bootstrap)
-print(sd_iptw)
+(b_iptw <- mean(iptw_bootstrap))
+(sd_iptw <- sd(iptw_bootstrap))
 t_stat <- b_iptw/sd_iptw
-p_val <- dt(t_stat, df = n-1, log=FALSE)
-print(p_val)
+(p_val <- dt(t_stat, df = n-1, log=FALSE))
 quantile(iptw_bootstrap, probs = c(0.025,0.975))
 
 # IPTW log total earnings
@@ -231,15 +270,13 @@ quantile(iptw_bootstrap, probs = c(0.025,0.975))
 total_earn_iptw <- iptw(Y=Y2, A=A2, X=WA2, family = "gaussian")
 total_earn_iptw
 
-total_iptw_bootstrap <- np_boot(Y=Y2, A=A2, X=WA2, nrep = 100, family = "gaussian")
+# William: temporary change to nrep=1 for quicker testing
+total_iptw_bootstrap <- np_boot(Y=Y2, A=A2, X=WA2, nrep = 2, family = "gaussian") 
 summary(total_iptw_bootstrap)
-b_iptw <- mean(total_iptw_bootstrap)
-print(b_iptw)
-sd_iptw <- sd(total_iptw_bootstrap)
-print(sd_iptw)
+(b_iptw <- mean(total_iptw_bootstrap))
+(sd_iptw <- sd(total_iptw_bootstrap))
 t_stat <- b_iptw/sd_iptw
-p_val <- dt(t_stat, df = n-1, log=FALSE)
-print(p_val)
+(p_val <- dt(t_stat, df = n-1, log=FALSE))
 quantile(total_iptw_bootstrap, probs = c(0.025,0.975))
 
 ###################################################
