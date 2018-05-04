@@ -1,0 +1,61 @@
+
+
+
+
+%---says not to indent paragraphs
+\setlength{\parindent}{0 in}
+
+%---set up headers and footers for pages further into the document:
+
+% \headerfooter{Course }[optional:  assignment type]{ number of problem set }{ due date }[your name]
+\newcommandx{\headerfooter}[5][2={}, 5={} ]{
+\pagestyle{fancy}
+\lhead{#2 #3}
+\rhead{#4}
+\chead{}
+\lfoot{#5}
+\cfoot{#1}
+\rfoot{Page \thepage}
+
+}
+%---uses the package fancyhdr
+%---also uses package xargs for the newcommandx with the optional parameters
+
+
+%---uses the package tcolorbox
+%---follows exactly answers here: https://tex.stackexchange.com/a/265804/103825 and here: https://tex.stackexchange.com/a/238296/103825 except that environment name is different
+\definecolor{block-gray}{gray}{0.85}
+\newtcolorbox{blockquote}{colback=block-gray,grow to right by=-10mm,grow to left by=-10mm,
+boxrule=0pt,boxsep=0pt,breakable}
+%--- see the documentation for explanation of all of the parameter values: https://mirror.hmc.edu/ctan/macros/latex/contrib/tcolorbox/tcolorbox.pdf
+
+% The following macro is used to generate a general header
+
+% \frontbox{ Class/Course }{ type of document }{ number of document type }{ date }[your name][Thing to add before date]
+\newcommandx{\frontbox}[6][ 5={William Krinsman}, 6={} ]{
+	%----------------- Note how we have to use \newcommandx  (emphasis on the X) instead of \newcommand in order to access the functionality of the xargs package
+   \newpage
+   \noindent
+
+   \begin{blockquote}
+        {#1 \hfill Spring 2018 }
+
+       \vspace{4mm}
+
+       % Add in the number of the assignment
+       { {\Huge \hfill #2 #3  \hfill} }
+
+        \vspace{4mm}
+       % Add in the specific due date of the problem set as well as your name
+       { { #5 \hfill #6 #4} }
+
+   \end{blockquote}
+
+
+}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../report/LaTeX-files/main/report"
+%%% End:

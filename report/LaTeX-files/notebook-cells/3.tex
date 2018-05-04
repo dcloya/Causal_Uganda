@@ -1,0 +1,63 @@
+   \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}3}]:} \PY{c+c1}{\PYZsh{} List to hold the different column names.}
+        \PY{p}{(}names\PY{o}{=}\PY{k+kt}{list}\PY{p}{(}
+          \PY{c+c1}{\PYZsh{} Outcomes of interest}
+          outcome\PY{o}{=}\PY{k+kt}{c}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{ever\PYZus{}self\PYZus{}employed\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{log\PYZus{}tot\PYZdq{}}\PY{p}{)}\PY{p}{,}
+        
+          \PY{c+c1}{\PYZsh{} Treatment variable}
+          treatment\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{treated\PYZdq{}}\PY{p}{,}
+        
+          \PY{c+c1}{\PYZsh{} Adjustment covariates}
+          covars\PY{o}{=}\PY{k+kt}{c}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{treated\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{gender\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{age\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{q06\PYZus{}dayorboarding\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{q25\PYZus{}family\PYZus{}business\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{q25a\PYZus{}wk\PYZus{}family\PYZus{}bus\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{timeprefs\PYZus{}patience\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{riskbehavior\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{mathbusiness\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{leadership\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{perceivedcontrol\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{timeprefs\PYZus{}delta\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{timeprefs\PYZus{}beta\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{prosocialbehavior\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{anxiety\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{selfconfidence\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{big5extroversion\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{big5emostability\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{big5openness\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{big5conscientious\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{big5agreeable\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{schoolacceptance\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{currfamwealthstep\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{tenyrwealthstep\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{takingriskstep\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{ravenscore\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{father\PYZus{}educ2\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{father\PYZus{}educ3\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{father\PYZus{}educ4\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{father\PYZus{}educ5\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{father\PYZus{}income2\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{father\PYZus{}income3\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{mother\PYZus{}income2\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{mother\PYZus{}income3\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{type\PYZus{}house\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{q13\PYZus{}olevelscore2\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{q13\PYZus{}olevelscore34\PYZdq{}}\PY{p}{)}
+        \PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+   \begin{description}
+\item[\$outcome] \begin{enumerate*}
+\item 'ever\_self\_employed'
+\item 'log\_tot'
+\end{enumerate*}
+
+\item[\$treatment] 'treated'
+\item[\$covars] \begin{enumerate*}
+\item 'treated'
+\item 'gender'
+\item 'age'
+\item 'q06\_dayorboarding'
+\item 'q25\_family\_business'
+\item 'q25a\_wk\_family\_bus'
+\item 'timeprefs\_patience'
+\item 'riskbehavior'
+\item 'mathbusiness'
+\item 'leadership'
+\item 'perceivedcontrol'
+\item 'timeprefs\_delta'
+\item 'timeprefs\_beta'
+\item 'prosocialbehavior'
+\item 'anxiety'
+\item 'selfconfidence'
+\item 'big5extroversion'
+\item 'big5emostability'
+\item 'big5openness'
+\item 'big5conscientious'
+\item 'big5agreeable'
+\item 'schoolacceptance'
+\item 'currfamwealthstep'
+\item 'tenyrwealthstep'
+\item 'takingriskstep'
+\item 'ravenscore'
+\item 'father\_educ2'
+\item 'father\_educ3'
+\item 'father\_educ4'
+\item 'father\_educ5'
+\item 'father\_income2'
+\item 'father\_income3'
+\item 'mother\_income2'
+\item 'mother\_income3'
+\item 'type\_house'
+\item 'q13\_olevelscore2'
+\item 'q13\_olevelscore34'
+\end{enumerate*}
+
+\end{description}
+

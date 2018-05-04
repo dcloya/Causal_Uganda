@@ -1,0 +1,47 @@
+   \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}15}]:} \PY{c+c1}{\PYZsh{} For business creation}
+         g\PYZus{}comp\PYZus{}boot \PY{o}{\PYZlt{}\PYZhy{}} np\PYZus{}boot\PYZus{}gcomp\PY{p}{(}Y\PY{o}{=}Y1\PY{p}{,} A\PY{o}{=}A1\PY{p}{,} W\PY{o}{=}W1\PY{p}{,} nrep\PY{o}{=}\PY{l+m}{100}\PY{p}{,} family\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{binomial\PYZdq{}}\PY{p}{)}
+         \PY{k+kp}{summary}\PY{p}{(}g\PYZus{}comp\PYZus{}boot\PY{p}{)}
+         
+         \PY{p}{(}b\PYZus{}iptw  \PY{o}{\PYZlt{}\PYZhy{}} \PY{k+kp}{mean}\PY{p}{(}g\PYZus{}comp\PYZus{}boot\PY{p}{)}\PY{p}{)}
+         
+         \PY{p}{(}sd\PYZus{}iptw \PY{o}{\PYZlt{}\PYZhy{}} sd\PY{p}{(}  g\PYZus{}comp\PYZus{}boot\PY{p}{)}\PY{p}{)}
+         
+         t\PYZus{}stat \PY{o}{\PYZlt{}\PYZhy{}} b\PYZus{}iptw\PY{o}{/}sd\PYZus{}iptw
+         \PY{p}{(}p\PYZus{}val \PY{o}{\PYZlt{}\PYZhy{}} dt\PY{p}{(}t\PYZus{}stat\PY{p}{,} df\PY{o}{=}n\PY{l+m}{\PYZhy{}1}\PY{p}{,} log\PY{o}{=}\PY{k+kc}{FALSE}\PY{p}{)}\PY{p}{)}
+         
+         quantile\PY{p}{(}g\PYZus{}comp\PYZus{}boot\PY{p}{,} probs\PY{o}{=}\PY{k+kt}{c}\PY{p}{(}\PY{l+m}{0.025}\PY{p}{,}\PY{l+m}{0.975}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+ [1] "A"                 "gender"            "age"              
+ [4] "q06\_dayorboarding" "treated"           "type\_house"       
+ [7] "mother\_income2"    "father\_income3"    "father\_income2"   
+[10] "prosocialbehavior" "big5emostability"  "currfamwealthstep"
+[13] "ravenscore"        "big5agreeable"     "leadership"       
+[16] "big5openness"     
+
+    \end{Verbatim}
+
+    
+    \begin{verbatim}
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+0.07751 0.09683 0.10461 0.10326 0.11016 0.11403 
+    \end{verbatim}
+
+    
+    0.103255428507584
+
+    
+    0.00775579552103696
+
+    
+    2.07434461855019e-23
+
+    
+    \begin{description*}
+\item[2.5\textbackslash{}\%] 0.0873818847222731
+\item[97.5\textbackslash{}\%] 0.112134764063077
+\end{description*}
+

@@ -1,0 +1,19 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdftex 2015.5.24)  4 MAY 2018 16:51
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**\input report.tex
+(./report.tex
+./report.tex:2: I can't find file `{../../../LaTeX_configuration/packagePreambl
+e.sty}'.
+l.2 ...../LaTeX_configuration/packagePreamble.sty}
+                                                  
+(Press Enter to retry, or Control-D to exit)
+Please type another input file name
+./report.tex:2: Emergency stop.
+l.2 ...../LaTeX_configuration/packagePreamble.sty}
+                                                  
+*** (job aborted, file error in nonstop mode)
+
+./report.tex:2:  ==> Fatal error occurred, no output PDF file produced!

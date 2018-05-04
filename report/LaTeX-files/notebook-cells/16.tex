@@ -1,0 +1,47 @@
+   \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}16}]:} \PY{c+c1}{\PYZsh{} For log of total earnings}
+         tot\PYZus{}g\PYZus{}comp\PYZus{}boot \PY{o}{\PYZlt{}\PYZhy{}} np\PYZus{}boot\PYZus{}gcomp\PY{p}{(}Y\PY{o}{=}Y2\PY{p}{,} A\PY{o}{=}A2\PY{p}{,} W\PY{o}{=}W2\PY{p}{,} nrep\PY{o}{=}\PY{l+m}{100}\PY{p}{,} family\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{gaussian\PYZdq{}}\PY{p}{)} 
+         \PY{k+kp}{summary}\PY{p}{(}tot\PYZus{}g\PYZus{}comp\PYZus{}boot\PY{p}{)}
+         
+         \PY{p}{(}b\PYZus{}iptw  \PY{o}{\PYZlt{}\PYZhy{}} \PY{k+kp}{mean}\PY{p}{(}tot\PYZus{}g\PYZus{}comp\PYZus{}boot\PY{p}{)}\PY{p}{)}
+         
+         \PY{p}{(}sd\PYZus{}iptw \PY{o}{\PYZlt{}\PYZhy{}} sd\PY{p}{(}  tot\PYZus{}g\PYZus{}comp\PYZus{}boot\PY{p}{)}\PY{p}{)}
+         
+         t\PYZus{}stat \PY{o}{\PYZlt{}\PYZhy{}} b\PYZus{}iptw\PY{o}{/}sd\PYZus{}iptw
+         \PY{p}{(}p\PYZus{}val \PY{o}{\PYZlt{}\PYZhy{}} dt\PY{p}{(}t\PYZus{}stat\PY{p}{,} df\PY{o}{=}n\PY{l+m}{\PYZhy{}1}\PY{p}{,} log\PY{o}{=}\PY{k+kc}{FALSE}\PY{p}{)}\PY{p}{)}
+         
+         quantile\PY{p}{(}tot\PYZus{}g\PYZus{}comp\PYZus{}boot\PY{p}{,} probs\PY{o}{=}\PY{k+kt}{c}\PY{p}{(}\PY{l+m}{0.025}\PY{p}{,}\PY{l+m}{0.975}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+ [1] "A"                   "gender"              "q13\_olevelscore34"  
+ [4] "big5emostability"    "timeprefs\_delta"     "treated"            
+ [7] "q25\_family\_business" "q06\_dayorboarding"   "q13\_olevelscore2"   
+[10] "age"                 "tenyrwealthstep"     "timeprefs\_beta"     
+[13] "leadership"          "father\_educ4"        "mother\_income3"     
+[16] "anxiety"            
+
+    \end{Verbatim}
+
+    
+    \begin{verbatim}
+    Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
+-0.01737  0.09807  0.13171  0.13350  0.17054  0.24804 
+    \end{verbatim}
+
+    
+    0.133499791152873
+
+    
+    0.0541475573594245
+
+    
+    0.0202236528538269
+
+    
+    \begin{description*}
+\item[2.5\textbackslash{}\%] 0.0276082188190126
+\item[97.5\textbackslash{}\%] 0.230772835739166
+\end{description*}
+

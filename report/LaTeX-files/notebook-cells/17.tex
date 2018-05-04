@@ -1,0 +1,68 @@
+   \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}17}]:} \PY{c+c1}{\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}}
+         \PY{c+c1}{\PYZsh{} IPTW}
+         \PY{c+c1}{\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}}
+         
+         iptw \PY{o}{\PYZlt{}\PYZhy{}} \PY{k+kr}{function}\PY{p}{(}Y\PY{p}{,} A\PY{p}{,} X\PY{p}{,} family\PY{p}{)}\PY{p}{\PYZob{}}
+             
+           n  \PY{o}{\PYZlt{}\PYZhy{}} \PY{k+kp}{NROW}\PY{p}{(}Y\PY{p}{)}
+           \PY{c+c1}{\PYZsh{} William: commented out to prevent excess verbosity  }
+           \PY{c+c1}{\PYZsh{}print(n)}
+             
+           \PY{c+c1}{\PYZsh{} William: wrapped in suppressWarnings() to prevent excessive verbosity}
+           \PY{k+kp}{suppressWarnings}\PY{p}{(}
+             propensity\PYZus{}score \PY{o}{\PYZlt{}\PYZhy{}} SuperLearner\PY{p}{(}Y\PY{o}{=}A\PY{p}{,}
+                            X\PY{o}{=}X\PY{p}{,}
+                            SL.library\PY{o}{=}g\PYZus{}library\PY{p}{,}
+                            family\PY{o}{=}family\PY{p}{)}
+             \PY{p}{)} 
+             
+           \PY{c+c1}{\PYZsh{} Obtain predicted probability of treatment }
+           \PY{c+c1}{\PYZsh{} William: wrapped in suppressWarnings() to prevent excessive verbosity}
+           \PY{k+kp}{suppressWarnings}\PY{p}{(}
+             pred\PYZus{}g1W \PY{o}{\PYZlt{}\PYZhy{}} predict\PY{p}{(}propensity\PYZus{}score\PY{p}{,} newX\PY{o}{=}X\PY{p}{,} type\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{response\PYZsq{}}\PY{p}{)}\PY{o}{\PYZdl{}}pred
+             \PY{p}{)} 
+             
+           \PY{c+c1}{\PYZsh{} Probability of not being treated}
+           pred\PYZus{}g0W \PY{o}{\PYZlt{}\PYZhy{}} \PY{l+m}{1} \PY{o}{\PYZhy{}} pred\PYZus{}g1W
+             
+           \PY{c+c1}{\PYZsh{} Create vector gAW}
+           gAW \PY{o}{\PYZlt{}\PYZhy{}} \PY{k+kp}{rep}\PY{p}{(}\PY{k+kc}{NA}\PY{p}{,} n\PY{p}{)}
+           gAW\PY{p}{[}A\PY{o}{==}\PY{l+m}{1}\PY{p}{]} \PY{o}{\PYZlt{}\PYZhy{}} pred\PYZus{}g1W\PY{p}{[}A\PY{o}{==}\PY{l+m}{1}\PY{p}{]}
+           gAW\PY{p}{[}A\PY{o}{==}\PY{l+m}{0}\PY{p}{]} \PY{o}{\PYZlt{}\PYZhy{}} pred\PYZus{}g0W\PY{p}{[}A\PY{o}{==}\PY{l+m}{0}\PY{p}{]}
+             
+           \PY{c+c1}{\PYZsh{} Create vector with inverse of predicted probability}
+           wt \PY{o}{\PYZlt{}\PYZhy{}} \PY{l+m}{1}\PY{o}{/}gAW
+             
+           \PY{c+c1}{\PYZsh{} Implement stabilized IPTW estimator (a.k.a. the modified Horvitz\PYZhy{}Thompson estimator)}
+           Psi\PYZus{}hat \PY{o}{\PYZlt{}\PYZhy{}} \PY{k+kp}{mean}\PY{p}{(}\PY{k+kp}{as.numeric}\PY{p}{(}A\PY{o}{==}\PY{l+m}{1}\PY{p}{)}\PY{o}{*}wt\PY{o}{*}Y\PY{p}{)}\PY{o}{/}\PY{k+kp}{mean}\PY{p}{(}\PY{k+kp}{as.numeric}\PY{p}{(}A\PY{o}{==}\PY{l+m}{1}\PY{p}{)}\PY{o}{*}wt\PY{p}{)} \PY{o}{\PYZhy{}}
+                      \PY{k+kp}{mean}\PY{p}{(}\PY{k+kp}{as.numeric}\PY{p}{(}A\PY{o}{==}\PY{l+m}{0}\PY{p}{)}\PY{o}{*}wt\PY{o}{*}Y\PY{p}{)}\PY{o}{/}\PY{k+kp}{mean}\PY{p}{(}\PY{k+kp}{as.numeric}\PY{p}{(}A\PY{o}{==}\PY{l+m}{0}\PY{p}{)}\PY{o}{*}wt\PY{p}{)}
+           \PY{k+kr}{return}\PY{p}{(}Psi\PYZus{}hat\PY{p}{)}
+           \PY{p}{\PYZcb{}}
+         
+         np\PYZus{}boot \PY{o}{\PYZlt{}\PYZhy{}} \PY{k+kr}{function}\PY{p}{(}Y\PY{p}{,} A\PY{p}{,} X\PY{p}{,} family\PY{p}{,} nrep\PY{p}{)}\PY{p}{\PYZob{}}
+             
+           results \PY{o}{\PYZlt{}\PYZhy{}} \PY{k+kp}{rep}\PY{p}{(}\PY{k+kc}{NA}\PY{p}{,} nrep\PY{p}{)}
+           n       \PY{o}{\PYZlt{}\PYZhy{}} \PY{k+kp}{NROW}\PY{p}{(}Y\PY{p}{)}
+           df      \PY{o}{\PYZlt{}\PYZhy{}} \PY{k+kp}{cbind}\PY{p}{(}Y\PY{p}{,}A\PY{p}{,}X\PY{p}{)}
+             
+           \PY{k+kr}{for}\PY{p}{(}i \PY{k+kr}{in} \PY{l+m}{1}\PY{o}{:}nrep\PY{p}{)}\PY{p}{\PYZob{}}
+               
+             i\PYZus{}boot       \PY{o}{\PYZlt{}\PYZhy{}} \PY{k+kp}{sample}\PY{p}{(}\PY{l+m}{1}\PY{o}{:}\PY{k+kp}{nrow}\PY{p}{(}df\PY{p}{)}\PY{p}{,} size\PY{o}{=}n\PY{p}{,} replace\PY{o}{=}\PY{k+kc}{TRUE}\PY{p}{)}
+             df\PYZus{}bootstrap \PY{o}{\PYZlt{}\PYZhy{}} df\PY{p}{[}i\PYZus{}boot\PY{p}{,}\PY{p}{]}
+               
+             Y\PYZus{}b \PY{o}{\PYZlt{}\PYZhy{}} df\PYZus{}bootstrap\PY{p}{[}\PY{p}{,}\PY{l+m}{1}\PY{p}{]}
+             A\PYZus{}b \PY{o}{\PYZlt{}\PYZhy{}} df\PYZus{}bootstrap\PY{p}{[}\PY{p}{,}\PY{l+m}{2}\PY{p}{]}
+             W\PYZus{}b \PY{o}{\PYZlt{}\PYZhy{}} \PY{k+kp}{subset}\PY{p}{(}df\PYZus{}bootstrap\PY{p}{,} select\PY{o}{=}\PY{o}{\PYZhy{}}\PY{k+kt}{c}\PY{p}{(}\PY{l+m}{1}\PY{p}{,}\PY{l+m}{2}\PY{p}{)}\PY{p}{)}
+         
+             psi\PYZus{}bootstrap \PY{o}{\PYZlt{}\PYZhy{}} iptw\PY{p}{(}Y\PY{o}{=}Y\PYZus{}b\PY{p}{,} A\PY{o}{=}A\PYZus{}b\PY{p}{,} X\PY{o}{=}W\PYZus{}b\PY{p}{,} family\PY{o}{=}family\PY{p}{)}
+             \PY{c+c1}{\PYZsh{} William: added to avoid excess verbosity}
+             \PY{k+kp}{suppressWarnings}\PY{p}{(}
+             results\PY{p}{[}i\PY{p}{]}    \PY{o}{\PYZlt{}\PYZhy{}} psi\PYZus{}bootstrap
+                 \PY{p}{)}
+               
+           \PY{p}{\PYZcb{}}
+           \PY{k+kr}{return}\PY{p}{(}results\PY{p}{)}
+         \PY{p}{\PYZcb{}}
+\end{Verbatim}
+
