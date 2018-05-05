@@ -13,9 +13,9 @@ dependencies:
   - r-ggplot2=2.2.1
   - r-dplyr=0.7.4
   - r-magrittr=1.5
-  - r-foreign
-  - r-caret
-  - r-data.table
-  - r-xgboost
-  - r-foreach
-  - r-glmnet
+  - r-foreign=0.8_69
+  - r-caret=6.0_78
+  - r-data.table=1.10.4_3
+  - r-xgboost=0.7
+  - r-foreach=1.4.4
+  - r-glmnet=2.0_13
