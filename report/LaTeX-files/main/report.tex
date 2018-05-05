@@ -7,6 +7,8 @@
 
 \input{../notebook.tex}
 
+\addbibresource{../bibliography/bibliography.bib}
+
 % The command structure is as follows:
 % \headerfooter{ Class/Course }[optional: problem set, assignment, homework]{ number of problem set }{ due date }[your name]
 \headerfooter{PH 252D}[Entrepreneurship in Uganda]{}{05/06/2018}[Bathia, Contreras Loya, Krinsman]
@@ -46,7 +48,7 @@ Uganda, like most low-income countries, has a large share of youth who are eithe
 
 Many governments recognize that their economy would benefit from better-trained entrepreneurs. Uganda and 22 other African countries have mainstreamed entrepreneurship training in high school through support from the ILO. Other countries are developing short training programs in entrepreneurship, while others are expanding university level entrepreneurship training. However, the curricula in these programs are based primarily on hard skills and ignore the potential contribution of soft skills.\\
 
-This proposed research seeks to address a gap in development literature by focussing on what specific business training techniques work. There have been a number of experimental business training evaluation studies including Karlan and Valdivia (2011) and Valdivia (2011) in Peru, Drexler et al. (2011) in the Dominican Republic, Berge et al. (2011) in Tanzania. These studies confirm that business training leads to improvements in knowledge of good business practices. However, these studies examine the impact of training on existing entrepreneurs. In Sri Lanka de Mel, McKenzie, and Woodruff (2012) examine the effects of an ILO business training program on business success of both existing female entrepreneurs and the general population of women. The proposed project wishes to expand on this research. \\
+This proposed research seeks to address a gap in development literature by focussing on what specific business training techniques work. There have been a number of experimental business training evaluation studies including Karlan and Valdivia (2011)\cite{karlanAndValdivia2011} and Valdivia (2011)\cite{valdivia2011} in Peru, Drexler et al. (2014)\cite{drexler2014} in the Dominican Republic, Berge et al. (2011)\cite{berge2011} in Tanzania. These studies confirm that business training leads to improvements in knowledge of good business practices. However, these studies examine the impact of training on existing entrepreneurs. In Sri Lanka de Mel, McKenzie, and Woodruff (2012)\cite{deMelEtAl2012} examine the effects of an ILO business training program on business success of both existing female entrepreneurs and the general population of women. The proposed project wishes to expand on this research. \\
 
 (Scientific question is the same as the causal question(s), so we should probably state somewhere that they are the same, rather than stating them twice)
 More specifically, we want to investigate if entrepreneurial training affects labor market outcomes by a) inducing individuals to start businesses sooner after graduation of secondary school and b) increasing revenues and profits for those businesses. We measure business creation and financial performance in a sample of 3,893 Ugandans between 22-30 years old who were eligible to receive a three-week, post-secondary intensive training camp on entrepreneurship skills. We will study economic outcomes of individuals under a non-parametric framework to estimate their treatment-specific counterfactual outcomes.\\
@@ -85,8 +87,9 @@ Sample balanced across 3 arms of the study. 9 of 144 p-values were less than 0.1
 \section{Anticipated challenges}
 \label{sec:antic-chall}
 
-Even though assignment to treatment was randomized, compliance with treatment was not perfect (i.e. not every individual assigned to treatment attended the training). Moreover, we were able to reach 88\% of the original sample in the follow-up interview. Therefore, estimation of causal effects in this setting entails dealing with a potential selection problem, because individuals who did not attend the training, or individuals who were lost to follow-up could differ in observable and unobservable characteristics correlated with the outcomes. Fortunately, we have baseline covariates of those were lost to follow-up for the original 4,400 individuals. By fully utilizing all the available baseline covariates, our aim is to estimate a double robust locally efficient substitution estimator that will be consistent and asymptotically linear if the selection mechanism is consistently estimated or if we can treat assignment to treatment and attrition as independent events (i.e. no differential attrition between treatment and control).\cite{nano1} 
-An empirical strategy to deal with this censoring issue is to model assignment to treatment A and attrition $\Delta$ as a single intervention node by estimating its joint distribution $f_{A,\Delta}(A,\Delta)$.
+Even though assignment to treatment was randomized, compliance with treatment was not perfect (i.e. not every individual assigned to treatment attended the training). Moreover, we were able to reach 88\% of the original sample in the follow-up interview. Therefore, estimation of causal effects in this setting entails dealing with a potential selection problem, because individuals who did not attend the training, or individuals who were lost to follow-up could differ in observable and unobservable characteristics correlated with the outcomes. Fortunately, we have baseline covariates of those were lost to follow-up for the original 4,400 individuals. By fully utilizing all the available baseline covariates, our aim is to estimate a double robust locally efficient substitution estimator that will be consistent and asymptotically linear if the selection mechanism is consistently estimated or if we can treat assignment to treatment and attrition as independent events (i.e. no differential attrition between treatment and control).
+
+An empirical strategy to deal with this censoring issue is to model assignment to treatment $A$ and attrition $\Delta$ as a single intervention node by estimating its joint distribution $f_{A,\Delta}(A,\Delta)$.
 
 
 \section{Causal Analysis of Experiment}
@@ -96,35 +99,35 @@ For each of the three outcomes, the target causal parameter is the Average Treat
 
 \[ \Psi^{\mathcal{F}}(\mathbb{P}_{U,X}) = \mathbb{E}_{U,X}(Y_1) - \mathbb{E}_{U,X}(Y_0)  \]
 
-Because this is an RCT (randomized control trial), we can conclude that A is a function of UA only, so that there must be an exclusion restriction between W and A. [Citation: p. 24 of the Mark van der Laan book] \\
+Because this is an RCT (randomized control trial), we can conclude that $A$ is a function of $U_A$ only, so that there must be an exclusion restriction between $W$ and $A$. See p. 24 of \cite{tlb}. \\
 
-UA is independent of UW and of UY \\
+$U_A$ is independent of $U_W$ and of $U_Y$. \\
 
-We may assume that UA is independent of UY and of UW, which corresponds with believing that there are no unmeasured factors that predict both A and the outcome Y: this is often called the no unmeasured confounders assumption. \\
+We may assume that $U_A$ is independent of $U_Y$ and of $U_W$, which corresponds with believing that there are no unmeasured factors that predict both $A$ and the outcome $Y$: this is often called the no unmeasured confounders assumption. \\
 
-We are randomizing A, this is often called the no unmeasured confounders assumption. \\
+We are randomizing $A$. This is allows us to make what is often called the no unmeasured confounders assumption. \\
 
-Any probability distribution of O can be obtained by selecting a particular data-generating distribution of (U, X). \\
+Any probability distribution of $O$ can be obtained by selecting a particular data-generating distribution of $(U,X)$. \\
 
-causal assumptions we have made about how the data were generated in nature. Specifically, with the SCM represented in (2.1), we have assumed that the underlying data were generated by the following actions: \\
+With the structural causal model represented in our figure, we have assumed that the underlying data were generated by the following actions: \\
 
 
 \begin{enumerate}
-\item Drawing unobservable U from some probability distribution PU ensuring that UA is independent of UY , given W.
-\item Generating W as a deterministic function of UW.
-\item Generating A as a deterministic function of W and UA.
-\item Generating Y as a deterministic function of W, A, and UY.
+\item Drawing unobservable $U$ from some probability distribution $\probability_U$ ensuring that $U_A$ is independent of $U_Y$, given $W$.
+\item Generating $W$ as a deterministic function of $U_W$.
+\item Generating $A$ as a deterministic function of $W$ and $U_A$.
+\item Generating $Y$ as a deterministic function of $W$, $A$, and $U_Y$.
 \end{enumerate} 
 
-There are no assumptions on functional forms, but because of the randomization of UA, our model is semi-parametric.\\
+There are no assumptions on functional forms, but because of the randomization of $U_A$, our model is semi-parametric.\\
 
-We intervene on node A.\\
+We intervene on node $A$.\\
 
-The time ordering of the variables is: W -> A -> Y. For the causal ordering, we have that W and A both precede Y, and neither W nor A precede each other.\\
+The time ordering of the variables is: $W \to A \to Y$. For the causal ordering, we have that $W$ and $A$ both precede $Y$, and neither $W$ nor $A$ precede each other.\\
                           
-UA independent UY and UA independent of UW, so there is no backdoor path from Y to A, and our causal estimand is identifiable from the statistical estimand. Thus, there should not be any backdoor paths, and therefore nor should there be any unmeasured confounders.\\
+$U_A$ is independent of $U_Y$ and $U_A$ is independent of $U_W$, so there is no backdoor path from $Y$ to $A$. Whence our causal estimand is identifiable from the statistical estimand. Thus, there should not be any backdoor paths, and therefore nor should there be any unmeasured confounders.\\
 
-The intervention node A was deliberately randomized, so these independence assumptions should hold by design of the experiment. We can test this assumption for UA and UW by using a balance table. There is no way for us to test the independence assumption of UA and UY.\\
+The intervention node $A$ was deliberately randomized, so these independence assumptions should hold by design of the experiment. We can test this assumption for $U_A$ and $U_W$ by using a balance table. There is no way for us to test the independence assumption of $U_A$ and $U_Y$.\\
 
 
 
@@ -132,59 +135,11 @@ The intervention node A was deliberately randomized, so these independence assum
 \section{Variables of interest}
 \label{sec:variables-interest}
 
-
-\begin{center}
-\begin{tabular}{ | p{0.15\linewidth} | p{0.3\linewidth} |  p{0.45\linewidth} | } 
- \hline
- Variable type & Variable name & Description \\ 
-
-\hline
- Y & Business creation & =1 if respondent started a business after graduation from high school \\ 
-
-\hline
- Y &Log of revenue & Monthly revenue from all self-employment activities \\ 
-
-\hline 
-Y & Log of profit & Monthly profit from all self-employment activities \\
-
-\hline
-A & Treatment & =1 if participated in entrepreneurial training \\
-
-\hline
-W & Sociodemographic characteristics & Gender, age, parent’s income source and education level, boarding student, perceived socioeconomic level \\
-
-\hline
-W & Cognitive skills & Raven score, math score, GPA, O-level score, previous exposure to entrepreneurship  \\
-
-\hline
-W & Risk and time preferences & Present-bias and time-inconsistency scores \\
-
-\hline
-W & Personality characteristics & Big 5 (extroversion, emotional stability, openness, conscientiousness, agreeableness), leadership, perceived control, anxiety, pro-social behavior, and more. \\
-
- \hline
-\end{tabular}
-\end{center}
+\input{../variables-interest.tex}
 
 
-\section{Works cited}
-\label{sec:works-cited}
+\printbibliography
 
-
-
-Van der Laan MJ, Rose S, (2011). Targeted learning: causal inference for observational and experimental data.\emph{ Springer Science \& Business Media}.\\
-
-Karlan and Valdivia (2011) in Peru\\
-
-Valdivia (2011) in Peru. \\
-
-Drexler et al. (2011) in the Dominican Republic. \\
-
-Berge et al. (2011) in Tanzania. \\
-
-In Sri Lanka de Mel, McKenzie, and Woodruff (2012) \\
-
-%\pagebreak
 
 \chapter{Appendices}
 \label{cha:appendices}

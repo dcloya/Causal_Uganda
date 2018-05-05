@@ -8,58 +8,66 @@
           treatment\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{treated\PYZdq{}}\PY{p}{,}
         
           \PY{c+c1}{\PYZsh{} Adjustment covariates}
-          covars\PY{o}{=}\PY{k+kt}{c}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{treated\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{gender\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{age\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{q06\PYZus{}dayorboarding\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{q25\PYZus{}family\PYZus{}business\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{q25a\PYZus{}wk\PYZus{}family\PYZus{}bus\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{timeprefs\PYZus{}patience\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{riskbehavior\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{mathbusiness\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{leadership\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{perceivedcontrol\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{timeprefs\PYZus{}delta\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{timeprefs\PYZus{}beta\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{prosocialbehavior\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{anxiety\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{selfconfidence\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{big5extroversion\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{big5emostability\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{big5openness\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{big5conscientious\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{big5agreeable\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{schoolacceptance\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{currfamwealthstep\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{tenyrwealthstep\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{takingriskstep\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{ravenscore\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{father\PYZus{}educ2\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{father\PYZus{}educ3\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{father\PYZus{}educ4\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{father\PYZus{}educ5\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{father\PYZus{}income2\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{father\PYZus{}income3\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{mother\PYZus{}income2\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{mother\PYZus{}income3\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{type\PYZus{}house\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{q13\PYZus{}olevelscore2\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{q13\PYZus{}olevelscore34\PYZdq{}}\PY{p}{)}
+          covars\PY{o}{=}\PY{k+kt}{c}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{treated\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{gender\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{age\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{q06\PYZus{}dayorboarding\PYZdq{}}\PY{p}{,}
+          \PY{l+s}{\PYZdq{}}\PY{l+s}{q25\PYZus{}family\PYZus{}business\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{q25a\PYZus{}wk\PYZus{}family\PYZus{}bus\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{timeprefs\PYZus{}patience\PYZdq{}}\PY{p}{,}
+          \PY{l+s}{\PYZdq{}}\PY{l+s}{riskbehavior\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{mathbusiness\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{leadership\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{perceivedcontrol\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{timeprefs\PYZus{}delta\PYZdq{}}\PY{p}{,}
+          \PY{l+s}{\PYZdq{}}\PY{l+s}{timeprefs\PYZus{}beta\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{prosocialbehavior\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{anxiety\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{selfconfidence\PYZdq{}}\PY{p}{,}
+          \PY{l+s}{\PYZdq{}}\PY{l+s}{big5extroversion\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{big5emostability\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{big5openness\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{big5conscientious\PYZdq{}}\PY{p}{,}
+          \PY{l+s}{\PYZdq{}}\PY{l+s}{big5agreeable\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{schoolacceptance\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{currfamwealthstep\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{tenyrwealthstep\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{takingriskstep\PYZdq{}}\PY{p}{,}
+          \PY{l+s}{\PYZdq{}}\PY{l+s}{ravenscore\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{father\PYZus{}educ2\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{father\PYZus{}educ3\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{father\PYZus{}educ4\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{father\PYZus{}educ5\PYZdq{}}\PY{p}{,}
+          \PY{l+s}{\PYZdq{}}\PY{l+s}{father\PYZus{}income2\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{father\PYZus{}income3\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{mother\PYZus{}income2\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{mother\PYZus{}income3\PYZdq{}}\PY{p}{,}
+          \PY{l+s}{\PYZdq{}}\PY{l+s}{type\PYZus{}house\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{q13\PYZus{}olevelscore2\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{q13\PYZus{}olevelscore34\PYZdq{}}\PY{p}{)}
         \PY{p}{)}\PY{p}{)}
 \end{Verbatim}
 
-   \begin{description}
-\item[\$outcome] \begin{enumerate*}
-\item 'ever\_self\_employed'
-\item 'log\_tot'
-\end{enumerate*}
 
-\item[\$treatment] 'treated'
-\item[\$covars] \begin{enumerate*}
-\item 'treated'
-\item 'gender'
-\item 'age'
-\item 'q06\_dayorboarding'
-\item 'q25\_family\_business'
-\item 'q25a\_wk\_family\_bus'
-\item 'timeprefs\_patience'
-\item 'riskbehavior'
-\item 'mathbusiness'
-\item 'leadership'
-\item 'perceivedcontrol'
-\item 'timeprefs\_delta'
-\item 'timeprefs\_beta'
-\item 'prosocialbehavior'
-\item 'anxiety'
-\item 'selfconfidence'
-\item 'big5extroversion'
-\item 'big5emostability'
-\item 'big5openness'
-\item 'big5conscientious'
-\item 'big5agreeable'
-\item 'schoolacceptance'
-\item 'currfamwealthstep'
-\item 'tenyrwealthstep'
-\item 'takingriskstep'
-\item 'ravenscore'
-\item 'father\_educ2'
-\item 'father\_educ3'
-\item 'father\_educ4'
-\item 'father\_educ5'
-\item 'father\_income2'
-\item 'father\_income3'
-\item 'mother\_income2'
-\item 'mother\_income3'
-\item 'type\_house'
-\item 'q13\_olevelscore2'
-\item 'q13\_olevelscore34'
-\end{enumerate*}
+\textbf{\$outcome} \\
+ \mbox{'ever\_self\_employed'} \hspace{6pt} \mbox{'log\_tot'}\\
 
-\end{description}
+
+\textbf{\$treatment}\\ 
+\mbox{'treated'}
+\\
+
+\textbf{\$covars} \\
+ \mbox{'treated'} \hspace{6pt}
+ \mbox{'gender'} \hspace{6pt}
+ \mbox{'age'} \hspace{6pt}
+ \mbox{'q06\_dayorboarding'} \hspace{6pt}
+ \mbox{'q25\_family\_business'} \hspace{6pt}
+ \mbox{'q25a\_wk\_family\_bus'} \hspace{6pt}
+ \mbox{'timeprefs\_patience'} \hspace{6pt}
+ \mbox{'riskbehavior'} \hspace{6pt}
+ \mbox{'mathbusiness'} \hspace{6pt}
+ \mbox{'leadership'} \hspace{6pt}
+ \mbox{'perceivedcontrol'} \hspace{6pt}
+ \mbox{'timeprefs\_delta'} \hspace{6pt}
+ \mbox{'timeprefs\_beta'} \hspace{6pt}
+ \mbox{'prosocialbehavior'} \hspace{6pt}
+ \mbox{'anxiety'} \hspace{6pt}
+ \mbox{'selfconfidence'} \hspace{6pt}
+ \mbox{'big5extroversion'} \hspace{6pt}
+ \mbox{'big5emostability'} \hspace{6pt}
+ \mbox{'big5openness'} \hspace{6pt}
+ \mbox{'big5conscientious'} \hspace{6pt}
+ \mbox{'big5agreeable'} \hspace{6pt}
+ \mbox{'schoolacceptance'} \hspace{6pt}
+ \mbox{'currfamwealthstep'} \hspace{6pt}
+ \mbox{'tenyrwealthstep'} \hspace{6pt}
+ \mbox{'takingriskstep'} \hspace{6pt}
+ \mbox{'ravenscore'} \hspace{6pt}
+ \mbox{'father\_educ2'} \hspace{6pt}
+ \mbox{'father\_educ3'} \hspace{6pt}
+ \mbox{'father\_educ4'} \hspace{6pt}
+ \mbox{'father\_educ5'} \hspace{6pt}
+ \mbox{'father\_income2'} \hspace{6pt}
+ \mbox{'father\_income3'} \hspace{6pt}
+ \mbox{'mother\_income2'} \hspace{6pt}
+ \mbox{'mother\_income3'} \hspace{6pt}
+ \mbox{'type\_house'} \hspace{6pt}
+ \mbox{'q13\_olevelscore2'} \hspace{6pt}
+ \mbox{'q13\_olevelscore34'}
+
 
 
 %%% Local Variables:

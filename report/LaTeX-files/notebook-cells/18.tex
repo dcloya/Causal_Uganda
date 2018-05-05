@@ -2,7 +2,8 @@
 {\color{incolor}In [{\color{incolor}18}]:} \PY{c+c1}{\PYZsh{} IPTW for business creation}
          \PY{p}{(}ate\PYZus{}iptw \PY{o}{\PYZlt{}\PYZhy{}} iptw\PY{p}{(}Y\PY{o}{=}Y1\PY{p}{,} A\PY{o}{=}A1\PY{p}{,} X\PY{o}{=}WA\PY{p}{,} family\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{binomial\PYZdq{}}\PY{p}{)}\PY{p}{)}
          
-         \PY{c+c1}{\PYZsh{} William: added argument, family = \PYZdq{}binomial\PYZdq{} \PYZhy{}\PYZhy{} to avoid error \PYZsq{}argument \PYZdq{}family\PYZdq{} is missing, with no default\PYZsq{}}
+         \PY{c+c1}{\PYZsh{} added argument 'family = \PYZdq{}binomial\PYZdq{}'}
+         \PY{c+c1}{\PYZsh{} to avoid error \PYZsq{}argument \PYZdq{}family\PYZdq{} is missing, with no default\PYZsq{}}
          iptw\PYZus{}bootstrap \PY{o}{\PYZlt{}\PYZhy{}} np\PYZus{}boot\PY{p}{(}Y\PY{o}{=}Y1\PY{p}{,} A\PY{o}{=}A1\PY{p}{,} X\PY{o}{=}WA\PY{p}{,} nrep\PY{o}{=}\PY{l+m}{100}\PY{p}{,} family\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{binomial\PYZdq{}}\PY{p}{)} 
          \PY{k+kp}{summary}\PY{p}{(}iptw\PYZus{}bootstrap\PY{p}{)}
          
@@ -17,7 +18,7 @@
 \end{Verbatim}
 
 
-    0.10080197387954
+    0.10080197387954\\
 
     
     
@@ -27,18 +28,18 @@
     \end{verbatim}
 
     
-    0.102033773035489
+    0.102033773035489\\
 
     
-    0.018674796478849
+    0.018674796478849\\
 
     
-    0.000000753327084341801
+    0.000000753327084341801\\
 
     
     \begin{description*}
-\item[2.5\textbackslash{}\%] 0.0684991007238237
-\item[97.5\textbackslash{}\%] 0.136492148157286
+\item[2.5\%] 0.0684991007238237\\
+\item[97.5\%] 0.136492148157286
 \end{description*}
 
 

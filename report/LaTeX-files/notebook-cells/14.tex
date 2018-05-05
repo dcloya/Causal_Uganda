@@ -7,7 +7,7 @@
              
            X \PY{o}{\PYZlt{}\PYZhy{}} \PY{k+kp}{cbind}\PY{p}{(}A\PY{p}{,}W\PY{p}{)}
            \PY{k+kp}{print}\PY{p}{(}\PY{k+kp}{colnames}\PY{p}{(}X\PY{p}{)}\PY{p}{)}
-           \PY{c+c1}{\PYZsh{} William: wrapped in suppressWarnings() to prevent excessive verbosity}
+           \PY{c+c1}{\PYZsh{} wrapped in suppressWarnings() to prevent excessive verbosity}
            \PY{k+kp}{suppressWarnings}\PY{p}{(}
              QbarSL \PY{o}{\PYZlt{}\PYZhy{}} SuperLearner\PY{p}{(}Y\PY{o}{=}\PY{k+kp}{as.numeric}\PY{p}{(}Y\PY{p}{)}\PY{p}{,}
                                 X\PY{o}{=}X\PY{p}{,}
@@ -28,18 +28,18 @@
              W0\PYZus{}boot\PY{o}{\PYZdl{}}A \PY{o}{\PYZlt{}\PYZhy{}} \PY{l+m}{0}  
                
              \PY{c+c1}{\PYZsh{}psi\PYZus{}bootstrap \PYZlt{}\PYZhy{} G\PYZus{}comp(Y = Y\PYZus{}b, A = A\PYZus{}b, W = W\PYZus{}b, family = family)}
-             \PY{c+c1}{\PYZsh{} William: wrapped in suppressWarnings() to prevent excessive verbosity}
+             \PY{c+c1}{\PYZsh{} wrapped in suppressWarnings() to prevent excessive verbosity}
              \PY{k+kp}{suppressWarnings}\PY{p}{(}
                Qbar1W \PY{o}{\PYZlt{}\PYZhy{}} predict\PY{p}{(}QbarSL\PY{p}{,} newdata\PY{o}{=}W1\PYZus{}boot\PY{p}{,} type\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{response\PYZdq{}}\PY{p}{)}\PY{o}{\PYZdl{}}pred
                \PY{p}{)} 
          
-             \PY{c+c1}{\PYZsh{} William: wrapped in suppressWarnings() to prevent excessive verbosity}
+             \PY{c+c1}{\PYZsh{} wrapped in suppressWarnings() to prevent excessive verbosity}
              \PY{k+kp}{suppressWarnings}\PY{p}{(}
                Qbar0W \PY{o}{\PYZlt{}\PYZhy{}} predict\PY{p}{(}QbarSL\PY{p}{,} newdata\PY{o}{=}W0\PYZus{}boot\PY{p}{,} type\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{response\PYZdq{}}\PY{p}{)}\PY{o}{\PYZdl{}}pred
                \PY{p}{)} 
          
              psi\PYZus{}bootstrap \PY{o}{\PYZlt{}\PYZhy{}} \PY{p}{(}Qbar1W \PY{o}{\PYZhy{}} Qbar0W\PY{p}{)}
-             \PY{c+c1}{\PYZsh{} William: to prevent excess verbosity in output}
+             \PY{c+c1}{\PYZsh{} wrapped in suppressWarnings() to prevent excess verbosity in output}
              \PY{k+kp}{suppressWarnings}\PY{p}{(}
              results\PY{p}{[}i\PY{p}{]}    \PY{o}{\PYZlt{}\PYZhy{}} psi\PYZus{}bootstrap
                  \PY{p}{)}

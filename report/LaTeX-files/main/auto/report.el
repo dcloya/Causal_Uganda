@@ -6,6 +6,7 @@
    (TeX-run-style-hooks
     "latex2e"
     "../notebook"
+    "../variables-interest"
     "../notebook-cells/1"
     "../notebook-cells/2"
     "../notebook-cells/3"
@@ -42,7 +43,6 @@
     "sec:antic-chall"
     "sec:caus-analys-exper"
     "sec:variables-interest"
-    "sec:works-cited"
     "cha:appendices"
     "sec:appendix-1")))
 

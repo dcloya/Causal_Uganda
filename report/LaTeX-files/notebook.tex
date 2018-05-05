@@ -32,8 +32,14 @@
     }
     \usepackage{upquote} % Upright quotes for verbatim code
     \usepackage{eurosym} % defines \euro
-    \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
-    \usepackage[utf8x]{inputenc} % Allow utf-8 characters in the tex document
+
+    % apparently ucs is incompatible with biblatex? so commented out
+    %\usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+
+    % according to here: https://tex.stackexchange.com/questions/215654/biblatex-package-problem#comment506283_215654
+    \usepackage[utf8]{inputenc} % Allow utf-8 characters in the tex document
+    % the original option, utf8x, chosen by Jupyter notebook stealthily imports ucs -- we don't want that b/c biblatex complains so it's been changed
+
     \usepackage{fancyvrb} % verbatim replacement that allows latex
     \usepackage{grffile} % extends the file name processing of package graphics 
                          % to support a larger range 
@@ -42,6 +48,10 @@
     % internal cross-reference links, web links for URLs, etc.)
 
     \usepackage{longtable} % longtable support required by pandoc >1.10
+    % according to answer here: https://tex.stackexchange.com/questions/32726/center-wide-longtable-not-tabular-or-tabularx/32729
+    % can be used to avoid the table being too far in the center
+    \setlength{\LTleft}{-1cm plus -1fill}
+
     \usepackage{booktabs}  % table support for pandoc > 1.12.2
     \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
                                 % normalem makes italics be italics, not underlines

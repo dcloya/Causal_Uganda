@@ -6,10 +6,8 @@
          iptw \PY{o}{\PYZlt{}\PYZhy{}} \PY{k+kr}{function}\PY{p}{(}Y\PY{p}{,} A\PY{p}{,} X\PY{p}{,} family\PY{p}{)}\PY{p}{\PYZob{}}
              
            n  \PY{o}{\PYZlt{}\PYZhy{}} \PY{k+kp}{NROW}\PY{p}{(}Y\PY{p}{)}
-           \PY{c+c1}{\PYZsh{} William: commented out to prevent excess verbosity  }
-           \PY{c+c1}{\PYZsh{}print(n)}
              
-           \PY{c+c1}{\PYZsh{} William: wrapped in suppressWarnings() to prevent excessive verbosity}
+           \PY{c+c1}{\PYZsh{} wrapped in suppressWarnings() to prevent excessive verbosity}
            \PY{k+kp}{suppressWarnings}\PY{p}{(}
              propensity\PYZus{}score \PY{o}{\PYZlt{}\PYZhy{}} SuperLearner\PY{p}{(}Y\PY{o}{=}A\PY{p}{,}
                             X\PY{o}{=}X\PY{p}{,}
@@ -18,7 +16,7 @@
              \PY{p}{)} 
              
            \PY{c+c1}{\PYZsh{} Obtain predicted probability of treatment }
-           \PY{c+c1}{\PYZsh{} William: wrapped in suppressWarnings() to prevent excessive verbosity}
+           \PY{c+c1}{\PYZsh{} wrapped in suppressWarnings() to prevent excessive verbosity}
            \PY{k+kp}{suppressWarnings}\PY{p}{(}
              pred\PYZus{}g1W \PY{o}{\PYZlt{}\PYZhy{}} predict\PY{p}{(}propensity\PYZus{}score\PY{p}{,} newX\PY{o}{=}X\PY{p}{,} type\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{response\PYZsq{}}\PY{p}{)}\PY{o}{\PYZdl{}}pred
              \PY{p}{)} 
@@ -56,7 +54,7 @@
              W\PYZus{}b \PY{o}{\PYZlt{}\PYZhy{}} \PY{k+kp}{subset}\PY{p}{(}df\PYZus{}bootstrap\PY{p}{,} select\PY{o}{=}\PY{o}{\PYZhy{}}\PY{k+kt}{c}\PY{p}{(}\PY{l+m}{1}\PY{p}{,}\PY{l+m}{2}\PY{p}{)}\PY{p}{)}
          
              psi\PYZus{}bootstrap \PY{o}{\PYZlt{}\PYZhy{}} iptw\PY{p}{(}Y\PY{o}{=}Y\PYZus{}b\PY{p}{,} A\PY{o}{=}A\PYZus{}b\PY{p}{,} X\PY{o}{=}W\PYZus{}b\PY{p}{,} family\PY{o}{=}family\PY{p}{)}
-             \PY{c+c1}{\PYZsh{} William: added to avoid excess verbosity}
+             \PY{c+c1}{\PYZsh{} added call to suppressWarnings() to avoid excess verbosity}
              \PY{k+kp}{suppressWarnings}\PY{p}{(}
              results\PY{p}{[}i\PY{p}{]}    \PY{o}{\PYZlt{}\PYZhy{}} psi\PYZus{}bootstrap
                  \PY{p}{)}

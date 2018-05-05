@@ -4,33 +4,23 @@
         \PY{c+c1}{\PYZsh{} The values generated are similar to those from the slides, but not the same.}
         
         \PY{k+kp}{rm}\PY{p}{(}\PY{k+kt}{list}\PY{o}{=}\PY{k+kp}{ls}\PY{p}{(}\PY{p}{)}\PY{p}{)}
-        \PY{c+c1}{\PYZsh{} William: commented out below for notebook}
-        \PY{c+c1}{\PYZsh{} knitr::opts\PYZus{}chunk\PYZdl{}set(echo = TRUE)}
         \PY{k+kp}{getwd}\PY{p}{(}\PY{p}{)}
         \PY{k+kp}{options}\PY{p}{(}scipen\PY{o}{=}\PY{l+m}{10}\PY{p}{)}
         
-        \PY{c+c1}{\PYZsh{} William: prevent excessive verbosity}
         \PY{k+kp}{suppressMessages}\PY{p}{(}   \PY{k+kn}{library}\PY{p}{(}tmle\PY{p}{)}\PY{p}{)}
-        \PY{c+c1}{\PYZsh{} William: prevent excessive verbosity}
         \PY{k+kp}{suppressMessages}\PY{p}{(}   \PY{k+kn}{library}\PY{p}{(}ggplot2\PY{p}{)}\PY{p}{)}
                             \PY{k+kn}{library}\PY{p}{(}SuperLearner\PY{p}{)}
-        \PY{c+c1}{\PYZsh{} William: prevent excessive verbosity}
         \PY{k+kp}{suppressMessages}\PY{p}{(}   \PY{k+kn}{library}\PY{p}{(}dplyr\PY{p}{)}\PY{p}{)}
                             \PY{k+kn}{library}\PY{p}{(}magrittr\PY{p}{)}
-        \PY{c+c1}{\PYZsh{} William: commented this out because obviously isn\PYZsq{}t necessary for notebook}
-        \PY{c+c1}{\PYZsh{}                   library(knitr)}
-                            \PY{k+kn}{library}\PY{p}{(}foreign\PY{p}{)}
+                           \PY{k+kn}{library}\PY{p}{(}foreign\PY{p}{)}
                             \PY{k+kn}{library}\PY{p}{(}ck37r\PY{p}{)}
         \PY{k+kp}{suppressMessages}\PY{p}{(}   \PY{k+kn}{library}\PY{p}{(}sl3\PY{p}{)}\PY{p}{)}
         \PY{k+kp}{suppressMessages}\PY{p}{(}   \PY{k+kn}{library}\PY{p}{(}arm\PY{p}{)}\PY{p}{)}
-        \PY{c+c1}{\PYZsh{} William: added this line to prevent verbosity from caret}
                             \PY{k+kn}{library}\PY{p}{(}lattice\PY{p}{)}
                             \PY{k+kn}{library}\PY{p}{(}caret\PY{p}{)}
         \PY{k+kp}{suppressMessages}\PY{p}{(}   \PY{k+kn}{library}\PY{p}{(}data.table\PY{p}{)}\PY{p}{)}
                             \PY{k+kn}{library}\PY{p}{(}screening\PY{p}{)}
-        \PY{c+c1}{\PYZsh{} William: added this line so that SuperLearner calls will work}
         \PY{k+kp}{suppressMessages}\PY{p}{(}   \PY{k+kn}{library}\PY{p}{(}xgboost\PY{p}{)}\PY{p}{)}
-        \PY{c+c1}{\PYZsh{} William: added these two lines to prevent unnecessary warnings when screening() is called}
                             \PY{k+kn}{library}\PY{p}{(}foreach\PY{p}{)}
         \PY{k+kp}{suppressMessages}\PY{p}{(}   \PY{k+kn}{library}\PY{p}{(}glmnet\PY{p}{)}\PY{p}{)}
 \end{Verbatim}
