@@ -1,5 +1,11 @@
 In future work we would like to investigate the differences in effectiveness, if any, between the hard-skills and soft-skills training. For the purposes of this initial analysis, we pooled both treatment pools into a single group. However, understanding the differences between the two treatment modes would have real policy implications: most existing entrepreneurship training programs only employ hard-skills training. Governments interested in effectively training their entrepreneurs would like to know whether hard-skills training, soft-skills training, or a combination of both, is most likely to improve the economic outcomes of the trainees. This was a question we completely neglected in the present analysis.\\
 
+Another direction to explore is a more sophisticated analysis of the censoring issues caused by the attrition between the original sample and the final sample. An empirical strategy to deal with this censoring issue is to model assignment to treatment $A$ and attrition $\Delta$ as a single intervention node by estimating its joint distribution $f_{A,\Delta}(A,\Delta)$.\\
+
+A second censoring issue we had was that not all individuals complied with treatment; that is, of those assigned to one of the training courses, not everyone went. In our preliminary analysis here we ignored this issue by only reporting intent to treat.\\
+
+Fortunately, we have baseline covariates of those were lost to follow-up for the original $4,400$ individuals, and we also have baseline covariates for everyone assigned to treatment, not just for those who complied. By fully utilizing all the available baseline covariates, our aim for future work is to estimate a double robust locally efficient substitution estimator that will be consistent and asymptotically linear if the selection mechanism is consistently estimated or if we can treat assignment to treatment and attrition as independent events (i.e. no differential attrition between treatment and control).
+
 
 %%% Local Variables:
 %%% mode: latex

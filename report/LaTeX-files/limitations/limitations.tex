@@ -1,16 +1,10 @@
-Even though assignment to treatment was randomized, compliance with treatment was not perfect (i.e. not every individual assigned to treatment attended the training). Moreover, we were only able to reach approximately $88\%$ of the original sample in the follow-up interview. Therefore, estimation of causal effects in this setting entails dealing with a potential selection problem, because individuals who did not attend the training, or individuals who were lost to follow-up could differ in observable and unobservable characteristics correlated with the outcomes. Fortunately, we have baseline covariates of those were lost to follow-up for the original $4,400$ individuals. By fully utilizing all the available baseline covariates, our aim is to estimate a double robust locally efficient substitution estimator that will be consistent and asymptotically linear if the selection mechanism is consistently estimated or if we can treat assignment to treatment and attrition as independent events (i.e. no differential attrition between treatment and control).\\
+Even though assignment to treatment was randomized, compliance with treatment was not perfect (i.e. not every individual assigned to treatment attended the training). More specifically, of everyone assigned to treatment (hard- or soft-skills), only $67.4\%$ participated in the training, so that approximately $30\%$ of those assigned to treatment didn't go to the training at all. On the positive side, of those who did attend the training, they were present for $94\%$ of the sessions on average. As a consequence of the above limitation, for this preliminary analysis we are only reporting intent to treat.\\
 
-An empirical strategy to deal with this censoring issue is to model assignment to treatment $A$ and attrition $\Delta$ as a single intervention node by estimating its joint distribution $f_{A,\Delta}(A,\Delta)$.
+ Moreover, we were only able to reach approximately $88\%$ of the original sample in the follow-up interview. \\ 
 
+Fortunately, we have baseline covariates of those were lost to follow-up for the original $4,400$ individuals, and we also have baseline covariates for everyone assigned to treatment, not just for those who complied.  There were no important differences in the observable characteristics of those (~12\%) who chose not to respond to the follow-up survey. Women were slightly likely more likely to respond to the follow-up.\\
 
-
-NOTE: 30\% of those assigned to treatment didn’t go to the training at all, those who attended, attendance 94\% of the days, so we’re reporting intent to treat.
-
-
- Of everyone assigned to treatment (hard- or soft-skills), $67.4\%$ participated in the training. None of the controls participated in the training.
-
-There were no important differences in the observable characteristics of those (~12\%) who chose not to respond to the follow-up survey. Women were slightly likely more likely to respond to the follow-up.\\
-
+Therefore, estimation of causal effects in this setting entails dealing with at least \textit{two} potential selection problems, because individuals who did not attend the training, or individuals who were lost to follow-up, could differ in observable and unobservable characteristics correlated with the outcomes. \\
 
 %%% Local Variables:
 %%% mode: latex

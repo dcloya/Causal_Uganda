@@ -77,6 +77,10 @@
 
 ("cha:appendices" "s" nil "/Users/williamkrinsman/Repositories/Causal_Uganda/report/LaTeX-files/main/report.tex" nil "")
 
+(toc "toc" "    1.1 Balance Table" "/Users/williamkrinsman/Repositories/Causal_Uganda/report/LaTeX-files/main/report.tex" nil 2 "1.1" "\\section{Balance Table}" 3292)
+
+("sec:balance-table" "s" nil "/Users/williamkrinsman/Repositories/Causal_Uganda/report/LaTeX-files/main/report.tex" nil "")
+
 (toc "toc" "  2 Appendix 1" "/Users/williamkrinsman/Repositories/Causal_Uganda/report/LaTeX-files/main/report.tex" nil 1 "2" "\\chapter{Appendix 1}" 14416)
 
 ("cha:appendix-1" "s" nil "/Users/williamkrinsman/Repositories/Causal_Uganda/report/LaTeX-files/main/report.tex" nil "")
