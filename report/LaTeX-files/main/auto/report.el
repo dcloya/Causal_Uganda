@@ -38,11 +38,15 @@
     "eobserved"
     "logistic")
    (LaTeX-add-labels
+    "part:slides"
     "cha:backgr-quest-quest"
     "cha:data-exper-descr"
     "sec:antic-chall"
     "sec:caus-analys-exper"
+    "fig:DAG"
     "sec:variables-interest"
+    "sec:interpretation"
+    "sec:future-directions"
     "cha:appendices"
     "sec:appendix-1")))
 

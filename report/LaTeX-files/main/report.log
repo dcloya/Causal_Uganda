@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  5 MAY 2018 14:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  5 MAY 2018 17:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1645,27 +1645,27 @@ File: english.lbx 2015/04/19 v3.0 biblatex localization (PK/JW/AB)
 (./report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 36.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 36.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 39.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 39.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Try loading font information for T1+ppl on input line 36.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Try loading font information for T1+ppl on input line 39.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/t1ppl.fd
 File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
@@ -1707,10 +1707,10 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'report.bbl' found.
 
 (./report.bbl)
-Package biblatex Info: Reference section=0 on input line 36.
-Package biblatex Info: Reference segment=0 on input line 36.
+Package biblatex Info: Reference section=0 on input line 39.
+Package biblatex Info: Reference segment=0 on input line 39.
 \AtBeginShipoutBox=\box81
-Package hyperref Info: Link coloring ON on input line 36.
+Package hyperref Info: Link coloring ON on input line 39.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1720,9 +1720,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count357
 )
-LaTeX Info: Redefining \ref on input line 36.
-LaTeX Info: Redefining \pageref on input line 36.
-LaTeX Info: Redefining \nameref on input line 36.
+LaTeX Info: Redefining \ref on input line 39.
+LaTeX Info: Redefining \pageref on input line 39.
+LaTeX Info: Redefining \nameref on input line 39.
 
 (./report.out) (./report.out)
 \@outlinefile=\write8
@@ -1776,155 +1776,129 @@ Package geometry Warning: The marginal notes overrun the paper.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 44.
-
-Underfull \hbox (badness 10000) in paragraph at lines 47--48
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 49--50
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 51--52
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 53--55
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 56--59
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 60--61
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 62--63
-
- []
-
-LaTeX Font Info:    Try loading font information for OT1+ppl on input line 68.
-(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1ppl.fd
-File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
-)
-LaTeX Font Info:    Try loading font information for OML+zplm on input line 68.
-
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omlzplm.fd
-File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
-)
-LaTeX Font Info:    Try loading font information for OMS+zplm on input line 68.
-
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omszplm.fd
-File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
-)
-LaTeX Font Info:    Try loading font information for OMX+zplm on input line 68.
-
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omxzplm.fd
-File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
-)
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 68.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 68.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 68.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 68.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 68.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 68.
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 68.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/jknapltx/ursfs.fd
-File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-)
-LaTeX Font Info:    Try loading font information for OT1+zplm on input line 68.
-
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1zplm.fd
-File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
-)
-Underfull \hbox (badness 10000) in paragraph at lines 68--69
-
- []
-
 [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 70--71
+LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <20.74> not available
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 46.
+LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <24.88> not available
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 46.
+
+[2
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 53--54
+[]\T1/ppl/m/n/10 Citation: https://www.brookings.edu/blog/africa-in-focus/2014/
+08/26/youth-unemployment-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 55--56
+[]\T1/ppl/m/n/10 http://eprcug.org/blog/549-the-need-to-focus-on-the-growing-nu
+mber-of-underemployed-persons-in-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 62--64
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--73
+Underfull \hbox (badness 10000) in paragraph at lines 75--76
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 74--75
+Underfull \hbox (badness 10000) in paragraph at lines 77--78
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 76--77
+Underfull \hbox (badness 10000) in paragraph at lines 79--80
+
+ []
+
+LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 85.
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 85.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 88--89
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 78--79
+Underfull \hbox (badness 10000) in paragraph at lines 90--91
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 80--81
+Underfull \hbox (badness 10000) in paragraph at lines 92--93
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 82--83
+Underfull \hbox (badness 10000) in paragraph at lines 94--95
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 84--85
-
- []
-
-[2]
-LaTeX Font Info:    Try loading font information for U+fplmbb on input line 100
-.
- (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ufplmbb.fd
-File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
+[3]
+LaTeX Font Info:    Try loading font information for TS1+ppl on input line 97.
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ts1ppl.fd
+File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
 )
 Underfull \hbox (badness 10000) in paragraph at lines 102--103
 
  []
 
+LaTeX Font Info:    Try loading font information for OT1+ppl on input line 108.
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--105
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1ppl.fd
+File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
+)
+LaTeX Font Info:    Try loading font information for OML+zplm on input line 108
+.
 
- []
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omlzplm.fd
+File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
+)
+LaTeX Font Info:    Try loading font information for OMS+zplm on input line 108
+.
 
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omszplm.fd
+File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
+)
+LaTeX Font Info:    Try loading font information for OMX+zplm on input line 108
+.
 
-Underfull \hbox (badness 10000) in paragraph at lines 106--107
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omxzplm.fd
+File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
+)
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 10.42007pt on input line 108.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 7.91925pt on input line 108.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 6.25204pt on input line 108.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 10.42007pt on input line 108.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 7.91925pt on input line 108.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 6.25204pt on input line 108.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 108.
 
- []
+(/usr/local/texlive/2015/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
+LaTeX Font Info:    Try loading font information for OT1+zplm on input line 108
+.
 
-
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1zplm.fd
+File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
+)
 Underfull \hbox (badness 10000) in paragraph at lines 108--109
 
  []
@@ -1940,6 +1914,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 112--113
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 114--115
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 116--117
+
+ []
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 118--119
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 120--121
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 122--123
 
  []
@@ -1950,43 +1944,50 @@ Underfull \hbox (badness 10000) in paragraph at lines 124--125
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 126--127
-
- []
-
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 128--129
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 130--131
 
  []
 
-(../variables-interest.tex
+LaTeX Font Info:    Try loading font information for U+fplmbb on input line 140
+.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ufplmbb.fd
+File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 142--143
+
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 151--152
+
+ []
+
+<../../DAG_Uganda.png, id=88, 575.14874pt x 221.82875pt>
+File: ../../DAG_Uganda.png Graphic file (type png)
+
+<use ../../DAG_Uganda.png>
+Package pdftex.def Info: ../../DAG_Uganda.png used on input line 155.
+(pdftex.def)             Requested size: 375.80544pt x 144.94855pt.
+ (../variables-interest.tex
 Underfull \hbox (badness 3482) in paragraph at lines 20--20
 []|\T1/ppl/m/n/10 Sociodemographic char-ac-ter-is-
  []
 
-) [4]
-LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 141.
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 141.
+[6 <../../DAG_Uganda.png>]) [7]
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 174.
 
- (/usr/local/texlive/2015/texmf-dist/tex/latex/base/t1cmtt.fd
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-) [5
+) [8
 
 ]
 Chapter 1.
-LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <20.74> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 144.
 (../notebook-cells/1.tex
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10> not available
 (Font)              Font shape `T1/cmtt/m/n' tried instead on input line 3.
 ) (../notebook-cells/2.tex) (../notebook-cells/3.tex
-[6
+[9
 
 ]
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <10> not available
@@ -2027,7 +2028,7 @@ LaTeX Font Info:    Try loading font information for TS1+cmtt on input line 16.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1cmtt.fd
 File: ts1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-) [7] [8])
+) [10] [11])
 (../notebook-cells/7.tex) (../notebook-cells/8.tex
 Underfull \hbox (badness 10000) in alignment at lines 10--31
  [] [] 
@@ -2043,15 +2044,15 @@ Underfull \hbox (badness 10000) in alignment at lines 51--68
  [] [] 
  []
 
-[9]) (../notebook-cells/9.tex [10]) (../notebook-cells/10.tex)
-(../notebook-cells/11.tex) (../notebook-cells/12.tex [11])
-(../notebook-cells/13.tex) (../notebook-cells/14.tex [12])
+[12]) (../notebook-cells/9.tex [13]) (../notebook-cells/10.tex)
+(../notebook-cells/11.tex) (../notebook-cells/12.tex [14])
+(../notebook-cells/13.tex) (../notebook-cells/14.tex [15])
 (../notebook-cells/15.tex
 Underfull \hbox (badness 10000) in paragraph at lines 34--35
 
  []
 
-[13]
+[16]
 Underfull \hbox (badness 10000) in paragraph at lines 37--38
 
  []
@@ -2076,7 +2077,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 40--41
 
  []
 
-) (../notebook-cells/17.tex [14]) (../notebook-cells/18.tex [15]
+) (../notebook-cells/17.tex [17]) (../notebook-cells/18.tex [18]
 Underfull \hbox (badness 10000) in paragraph at lines 21--22
 
  []
@@ -2116,27 +2117,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 36--37
 
  []
 
-[16]) (../notebook-cells/20.tex [17]) (../notebook-cells/21.tex) [18]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 193.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 193.
+[19]) (../notebook-cells/20.tex [20]) (../notebook-cells/21.tex) [21]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 228.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 228.
 
 (./report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 193.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 193.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 228.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 228.
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 38C9D1FBF6FCCA3EB0FD5486C1241B29;466.
+(rerunfilecheck)             Checksum: 14E3FA403B2C864ABB0860025503593B;594.
 Package logreq Info: Writing requests to 'report.run.xml'.
 \openout1 = `report.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 37450 strings out of 493089
- 721583 string characters out of 6134842
- 1159147 words of memory out of 5000000
- 40196 multiletter control sequences out of 15000+600000
- 35099 words of font info for 86 fonts, out of 8000000 for 9000
+ 37497 strings out of 493089
+ 722297 string characters out of 6134842
+ 1159216 words of memory out of 5000000
+ 40232 multiletter control sequences out of 15000+600000
+ 35412 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 65i,11n,101p,10464b,1089s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 65i,11n,101p,10464b,1084s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 }{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{
 /usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texl
@@ -2149,10 +2150,10 @@ mf-dist/fonts/type1/public/cm-super/sfit1000.pfb></usr/local/texlive/2015/texmf
 ist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2015/texmf-dist/fon
 ts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type
 1/urw/palatino/uplri8a.pfb>
-Output written on report.pdf (18 pages, 189221 bytes).
+Output written on report.pdf (21 pages, 210209 bytes).
 PDF statistics:
- 198 PDF objects out of 1000 (max. 8388607)
- 167 compressed objects within 2 object streams
- 39 named destinations out of 1000 (max. 500000)
- 69 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 229 PDF objects out of 1000 (max. 8388607)
+ 193 compressed objects within 2 object streams
+ 46 named destinations out of 1000 (max. 500000)
+ 98 words of extra memory for PDF output out of 10000 (max. 10000000)
 

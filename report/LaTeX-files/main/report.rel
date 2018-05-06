@@ -35,6 +35,10 @@
 
 (eof "/Users/williamkrinsman/Repositories/Causal_Uganda/report/LaTeX-files/notebook.tex")
 
+(toc "toc" "Part I Slides" "/Users/williamkrinsman/Repositories/Causal_Uganda/report/LaTeX-files/main/report.tex" nil 0 "Part I" "\\part{Slides}" 1965)
+
+("part:slides" "s" nil "/Users/williamkrinsman/Repositories/Causal_Uganda/report/LaTeX-files/main/report.tex" nil "")
+
 (toc "toc" "    1 Background/Motivation/Abstract/Scientific Question/Causal Question/etc." "/Users/williamkrinsman/Repositories/Causal_Uganda/report/LaTeX-files/main/report.tex" nil 2 "1" "\\section{Background/Motivation/Abstract/Scientific Question/Causal Question/etc.}" 1678)
 
 ("cha:backgr-quest-quest" "s" "Uganda, like most low-income countries, has a large share of youth who are either unemployed or unde" "/Users/williamkrinsman/Repositories/Causal_Uganda/report/LaTeX-files/main/report.tex" nil)
@@ -51,9 +55,19 @@
 
 ("sec:caus-analys-exper" "s" "For each of the three outcomes, the target causal parameter is the Average Treatment Effect, which i" "/Users/williamkrinsman/Repositories/Causal_Uganda/report/LaTeX-files/main/report.tex" nil)
 
+("fig:DAG" "f" nil "/Users/williamkrinsman/Repositories/Causal_Uganda/report/LaTeX-files/main/report.tex" nil "")
+
 (toc "toc" "    5 Variables of interest" "/Users/williamkrinsman/Repositories/Causal_Uganda/report/LaTeX-files/main/report.tex" nil 2 "5" "\\section{Variables of interest}" 12774)
 
 ("sec:variables-interest" "s" "\\begin{center} \\begin{tabular}{ | p{0.15\\linewidth} | p{0.3\\linewidth} | p{0.45\\linewidth} | } \\hlin" "/Users/williamkrinsman/Repositories/Causal_Uganda/report/LaTeX-files/main/report.tex" nil)
+
+(toc "toc" "    6 Interpretation" "/Users/williamkrinsman/Repositories/Causal_Uganda/report/LaTeX-files/main/report.tex" nil 2 "6" "\\section{Interpretation}" 13184)
+
+("sec:interpretation" "s" nil "/Users/williamkrinsman/Repositories/Causal_Uganda/report/LaTeX-files/main/report.tex" nil "")
+
+(toc "toc" "    7 Future Directions" "/Users/williamkrinsman/Repositories/Causal_Uganda/report/LaTeX-files/main/report.tex" nil 2 "7" "\\section{Future Directions}" 13237)
+
+("sec:future-directions" "s" nil "/Users/williamkrinsman/Repositories/Causal_Uganda/report/LaTeX-files/main/report.tex" nil "")
 
 (toc "toc" "    6 Works cited" "/Users/williamkrinsman/Repositories/Causal_Uganda/report/LaTeX-files/main/report.tex" nil 2 "6" "\\section{Works cited}" 13942)
 

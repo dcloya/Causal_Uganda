@@ -1,7 +1,10 @@
-\BOOKMARK [1][-]{section.0.1}{Background/Motivation/Abstract/Scientific Question/Causal Question/etc.}{}% 1
-\BOOKMARK [1][-]{section.0.2}{Data and Experiment Description}{}% 2
-\BOOKMARK [1][-]{section.0.3}{Anticipated challenges}{}% 3
-\BOOKMARK [1][-]{section.0.4}{Causal Analysis of Experiment}{}% 4
-\BOOKMARK [1][-]{section.0.5}{Variables of interest}{}% 5
-\BOOKMARK [0][-]{chapter.1}{Appendices}{}% 6
-\BOOKMARK [1][-]{section.1.1}{Appendix 1: Code}{chapter.1}% 7
+\BOOKMARK [-1][-]{part.1}{I Slides}{}% 1
+\BOOKMARK [0][-]{section.0.1}{Background}{part.1}% 2
+\BOOKMARK [1][-]{section.0.2}{Experimental Design}{section.0.1}% 3
+\BOOKMARK [1][-]{section.0.3}{Limitations}{section.0.1}% 4
+\BOOKMARK [1][-]{section.0.4}{Causal Analysis}{section.0.1}% 5
+\BOOKMARK [1][-]{section.0.5}{Variables of interest}{section.0.1}% 6
+\BOOKMARK [1][-]{section.0.6}{Interpretation}{section.0.1}% 7
+\BOOKMARK [1][-]{section.0.7}{Future Directions}{section.0.1}% 8
+\BOOKMARK [0][-]{chapter.1}{Appendices}{part.1}% 9
+\BOOKMARK [1][-]{section.1.1}{Code for Analysis}{chapter.1}% 10
