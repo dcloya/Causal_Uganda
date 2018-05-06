@@ -19,6 +19,26 @@
 
 \refsection{0}
   \sortlist{nty}{nty}
+    \entry{brookings}{online}{}
+      \name{author}{2}{}{%
+        {{hash=92ce3bae66c3798e60b2d03732b3b06c}{Ahaibwe}{A\bibinitperiod}{Gemma}{G\bibinitperiod}{}{}{}{}}%
+        {{hash=638d35e8155464f3a10410fbdd993a24}{Mbowa}{M\bibinitperiod}{Swaibu}{S\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{27b4b12d2a88a071a7c536306301b269}
+      \strng{fullhash}{27b4b12d2a88a071a7c536306301b269}
+      \field{sortinit}{A}
+      \field{sortinithash}{b685c7856330eaee22789815b49de9bb}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{26}
+      \field{month}{08}
+      \field{note}{[Online; accessed 6-May-2018]}
+      \field{title}{Youth Unemployment Challenge in Uganda and the Role of Employment Policies in Jobs Creation}
+      \field{year}{2014}
+      \verb{url}
+      \verb https://www.brookings.edu/blog/africa-in-focus/2014/08/26/youth-unemployment-challenge-in-uganda-and-the-role-of-employment-policies-in-jobs-creation/
+      \endverb
+    \endentry
     \entry{berge2011}{report}{}
       \name{author}{3}{}{%
         {{hash=ec6f0fd30b4e5863b5e47cc769fa31e5}{Berge}{B\bibinitperiod}{Lars\bibnamedelimb Ivar\bibnamedelima Oppedal}{L\bibinitperiod\bibinitdelim I\bibinitperiod\bibinitdelim O\bibinitperiod}{}{}{}{}}%
@@ -98,6 +118,26 @@
       \endverb
       \verb{url}
       \verb http://www.aeaweb.org/articles?id=10.1257/app.6.2.1
+      \endverb
+    \endentry
+    \entry{eprc}{online}{}
+      \name{author}{2}{}{%
+        {{hash=0b48566962dc61b93738857696fd754c}{Guloba}{G\bibinitperiod}{Madina}{M\bibinitperiod}{}{}{}{}}%
+        {{hash=8ac61960b4a378437dc13f90c7d0dc44}{Katunze}{K\bibinitperiod}{Miriam}{M\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{e9dc46853f6e97fd933463ca9248e715}
+      \strng{fullhash}{e9dc46853f6e97fd933463ca9248e715}
+      \field{sortinit}{G}
+      \field{sortinithash}{1c854ef9177a91bf894e66485bdbd3ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{17}
+      \field{month}{04}
+      \field{note}{[Online; accessed 6-May-2018]}
+      \field{title}{The need to focus on the growing number of underemployed persons in Uganda’s labour force}
+      \field{year}{2017}
+      \verb{url}
+      \verb http://eprcug.org/blog/549-the-need-to-focus-on-the-growing-number-of-underemployed-persons-in-uganda-s-labour-force
       \endverb
     \endentry
     \entry{karlanAndValdivia2011}{article}{}

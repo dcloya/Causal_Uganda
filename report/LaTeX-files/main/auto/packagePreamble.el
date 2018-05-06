@@ -29,5 +29,7 @@
     "fancyhdr"
     "xargs"
     "tcolorbox"
-    "bm")))
+    "booktabs"
+    "makecell"
+    "titlesec")))
 

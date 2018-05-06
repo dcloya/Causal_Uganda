@@ -6,7 +6,13 @@
    (TeX-run-style-hooks
     "latex2e"
     "../notebook"
+    "../background/background"
+    "../experiment/experiment"
+    "../limitations/limitations"
+    "../causal/analysis"
     "../variables-interest"
+    "../interpretation/interpretation"
+    "../future/directions"
     "../notebook-cells/1"
     "../notebook-cells/2"
     "../notebook-cells/3"
@@ -28,25 +34,20 @@
     "../notebook-cells/19"
     "../notebook-cells/20"
     "../notebook-cells/21"
+    "../balance/table"
     "book"
     "bk10")
    (TeX-add-symbols
-    '("code" 1)
-    "pcausal"
-    "pobserved"
-    "ecausal"
-    "eobserved"
-    "logistic")
+    '("code" 1))
    (LaTeX-add-labels
-    "part:slides"
     "cha:backgr-quest-quest"
     "cha:data-exper-descr"
     "sec:antic-chall"
     "sec:caus-analys-exper"
-    "fig:DAG"
     "sec:variables-interest"
     "sec:interpretation"
     "sec:future-directions"
     "cha:appendices"
-    "sec:appendix-1")))
+    "sec:appendix-1"
+    "sec:balance-table")))
 

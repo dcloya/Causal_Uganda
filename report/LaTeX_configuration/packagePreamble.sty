@@ -44,9 +44,12 @@
 \usepackage[most]{tcolorbox}
 
 
-% https://tex.stackexchange.com/questions/3238/bm-package-versus-boldsymbol
-% This answer says this has to be loaded after all font packages to work correctly: https://tex.stackexchange.com/a/179337
-\usepackage{bm}
+% need for proper vertical spacing in longtable: https://tex.stackexchange.com/questions/393253/vertical-alignment-of-a-row-after-use-shortstack
+\usepackage{booktabs}
+\usepackage{makecell}
+
+% for getting rid of chapter blah blah: https://tex.stackexchange.com/questions/120740/how-do-i-remove-chapter-n-from-the-chapter-titles-of-a-book
+\usepackage{titlesec}
 
 %%% Local Variables:
 %%% mode: latex
